@@ -1,0 +1,93 @@
+\documentclass[aspectratio=1610,12pt]{beamer}
+\definecolor{spoiler}{gray}{0.55}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{xcolor,wrapfig,sistyle}
+\usepackage{tikz,makecell}
+
+\usetheme{Berlin}
+\usecolortheme{dolphin}
+
+\definecolor{hard}{RGB}{30,65,140}
+\definecolor{soft}{RGB}{70,100,170}
+
+\setbeamercolor{structure}{fg=hard}
+\setbeamercolor{subsection in head/foot}{bg=soft,fg=white}
+\setbeamercolor{section in head/foot}{bg=hard,fg=white}
+\setbeamercolor{block title}{bg=hard,fg=white}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+
+\def\fram#1#2{\begin{frame}\frametitle{\bf #1}#2\end{frame}}
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\def\mitem{\medskip\item}
+
+\def\ll{\left(} \def\rr{\right)}
+\def\ps{\\ [0.8cm]}
+
+\def\usl#1{\begin{block}{Условие} #1 \end{block} \medskip\pause}
+\def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
+
+\def\mitem{\medskip\item}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+
+\title[Математика НОН-СТОП $\mid$ Семинар]
+	{\bfseries Принципы составления заданий \\
+		и система оценивания \\
+		Олимпиады «Математика НОН-СТОП»}
+
+\author[Б.А.\,Золотов, Д.Г.\,Штукенберг]
+	{СПбАППО \\ \vspace{0.3cm} Методическая комиссия Олимпиады}
+
+\institute[\textcolor{white}{«Время науки», ЛНМО, СПбАППО}]{}
+
+\date{21 апреля 2018}
+
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\section[Про]{Pro—tasks}
+
+\fram{Профильные задачи}{
+	Симуляция настоящего научного исследования, доступного для школьника. \ps
+	Предлагаем всем ученикам ФМЛ, так как это формат, с которым они ещё не сталкивались и в котором не «вынесут» всех остальных.
+}
+
+\fram{Взять известный факт из алгебры...}{
+	И попросить школьников доказать его в наглядной и понятной форме. \ps
+	Пример — задача про «звёзды»: дан правильный $n$--угольник, соединяем его вершины, находящиеся на равном расстоянии. \medskip
+\begin{center}
+	\tikz{
+		\draw[very thick, rotate=-48, color={rgb:black,1.4;white,8.6}]
+			(90:2cm) -- (234:2cm) -- (378:2cm)
+			-- (522:2cm) -- (666:2cm) -- cycle;
+		\draw[very thick, rotate=-24, color={rgb:black,4;white,6}]
+			(90:2cm) -- (234:2cm) -- (378:2cm)
+			-- (522:2cm) -- (666:2cm) -- cycle;
+		\draw[very thick] (90:2cm) -- (234:2cm) -- (378:2cm)
+			-- (522:2cm) -- (666:2cm) -- cycle;
+		\draw (3.5 cm, -1.6cm) node {$(15,6)$--звезда};
+		\draw (-3.5 cm, -1.6cm) node {\phantom{$(15,6)$--звезда}}
+	}
+\end{center}}
+
+\def\gcd{\text{НОД}\,} \def\vfi{\varphi}
+\fram{$n =\sum\limits_{d \mid n} \vfi(d)$}{
+$(n,k)$--звезда состоит из $\gcd(n,k)$ ломаных: в частности, из одной ломаной, когда $n$ и $k$ взаимно просты. \ps
+Отсюда есть ровно $\vfi(\tfrac{n}{\ell})$ звёзд, состоящих из $\ell$ ломаных. \ps
+$\tfrac{n}{\ell}$ пробегает все делители $n$, а каждая звезда состоит из скольки-то ломаных. Всего звёзд $n$.}
+
+
+
+
+
+
+
+
+\end{document}
