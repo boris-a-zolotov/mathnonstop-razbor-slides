@@ -2,10 +2,10 @@
 %% Basic needs of a LaTeX-er
 %%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage[paperheight=9cm,paperwidth=9cm,margin=0.8cm,bottom=1cm]{geometry}
+\RequirePackage[paperheight=9.2cm,paperwidth=9.2cm,margin=0.55cm]{geometry}
 \RequirePackage{amsmath,amssymb,amsthm,mathtools,hyperref,fancyhdr}
 \RequirePackage{enumerate,enumitem,caption,euscript}
-\RequirePackage{euscript,indentfirst,array}
+\RequirePackage{euscript,indentfirst,array,makecell}
 \RequirePackage[russian]{babel}
 
 \RequirePackage{tikz}
@@ -18,14 +18,16 @@
 %%%%%%%%%%%%%%%%%%%%
 
 \def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
-\linespread{1.18} \def\ms{\medskip\par}
+\linespread{1.18} \def\ms{\bigskip\par}
 \def\ll{\left(} \def\rr{\right)}
 \def\lag{\left\langle} \def\rag{\right\rangle}
 \def\surl#1{{\small\url{#1}}}
 
-\definecolor{bcck}{RGB}{30, 30, 29}
-% \definecolor{bcck}{RGB}{0, 0, 0}
-\definecolor{txxt}{RGB}{237, 231, 203}
+% \definecolor{bcck}{RGB}{30, 30, 29}
+% \definecolor{txxt}{RGB}{237, 231, 203}
+
+\definecolor{bcck}{RGB}{14, 16, 78}
+\definecolor{txxt}{RGB}{202, 217, 237}
 
 %%%%%%%%%%%%%%%%%%%%
 %% Greek letters
@@ -45,11 +47,11 @@
 
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0cm}
-\parindent=0cm \footskip=0.4cm
+\parindent=0cm \footskip=0.22cm
 
 \fancyhead[CO,CE,LO,LE,RO,RE]{ }
 \fancyfoot[LO,LE,CO,CE]{ }
-\fancyfoot[RO,RE]{\thepage}
+\fancyfoot[RO,RE]{\footnotesize\thepage}
 
 \renewcommand{\labelenumi}{\arabic{enumi}) }
 
