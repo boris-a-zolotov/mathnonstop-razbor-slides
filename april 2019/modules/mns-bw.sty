@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%
+%% Basic needs of a LaTeX-er
+%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[paperheight=9.2cm,paperwidth=9.2cm,margin=0.55cm]{geometry}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools,hyperref,fancyhdr}
+\RequirePackage{enumerate,enumitem,caption,euscript}
+\RequirePackage{euscript,indentfirst,array,makecell}
+\RequirePackage[russian]{babel}
+
+\RequirePackage{tikz}
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,
+	shapes,fit,calc,shadows,plotmarks}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Intimately personal
+%%%%%%%%%%%%%%%%%%%%
+
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\linespread{1.18} \def\ms{\bigskip\par}
+\def\ll{\left(} \def\rr{\right)}
+\def\lag{\left\langle} \def\rag{\right\rangle}
+\def\surl#1{{\small\url{#1}}}
+
+% \definecolor{bcck}{RGB}{30, 30, 29}
+% \definecolor{txxt}{RGB}{237, 231, 203}
+
+\definecolor{bcck}{RGB}{245, 245, 245}
+\definecolor{txxt}{RGB}{60, 60, 60}
+
+%%%%%%%%%%%%%%%%%%%%
+%% Greek letters
+%%%%%%%%%%%%%%%%%%%%
+
+\def\alpha{\text{\it α}}
+\def\beta{\text{\it β}}
+\def\chi{\text{\it χ}}
+\def\lambda{\text{\it λ}}
+\def\pi{\text{\it π}}
+\def\l{\lambda}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Pagestyle
+%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0cm}
+\parindent=0cm \footskip=0.22cm
+
+\fancyhead[CO,CE,LO,LE,RO,RE]{ }
+\fancyfoot[LO,LE,CO,CE]{ }
+\fancyfoot[RO,RE]{\footnotesize\thepage}
+
+\renewcommand{\labelenumi}{\arabic{enumi}) }
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Standing still mathematical
+%%%%%%%%%%%%%%%%%%%%
+
+\def\br{\mathbb R}
+\def\bc{\mathbb C}
+\def\bn{\mathbb N}
+
+\def\matrz{\text{\bf 0}}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Align}{\text{{\scshape Align}\,}}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Theorems and statements
+%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{exmpl}{Example}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{stat}[theorem]{Statement}
+
+\def\newthm#1#2{
+	\begin{theorem}
+	\label{#1} #2
+	\end{theorem}}
+\def\newlm#1#2{
+	\begin{lemma}
+	\label{#1} #2
+	\end{lemma}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{task}{Problem}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%% Elena
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\elena}[2][says]{** \textsc{elena #1:} \textcolor{magenta}{\textsl{#2}} **}
+\let\Elena\elena
