@@ -1,0 +1,229 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{modules/mns}
+\input{modules/mspec}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\begin{document}
+\pagecolor{bcck}
+
+\def\slide#1{\newpage \begin{center} \bfseries #1 \end{center}}
+\def\c{\color{txxt}}
+\def\dwt{\draw[very thick,color=txxt]}
+
+\input{nagrFstNew}
+
+\newpage \thispagestyle{empty}
+\ \\ [0.7cm]
+
+\begin{center}
+	\includegraphics[scale=1.7]{fpg_av/vn}
+\end{center}
+
+\input{nagr}
+
+\slide{Эта презентация}
+\ \\ [0.3cm]
+
+\begin{center}
+	\url{http://bit.ly/mns-25apr}
+\end{center}
+
+\slide{«Ты школьник! — А может ты школьник?»}
+
+Школьники всегда лгут, а студенты всегда говорят правду. Каждого попросили написать, сколько он видит студентов вокруг себя.
+
+\ms Всегда ли можно понять, сколько студентов?
+
+\slide{«Ты школьник! — А может ты школьник?»}
+
+Нет, не всегда:
+
+\ms 3, 3, 3, 3,\quad 5, 5, 5, 5, 5, 5,\\ 1001, 1002, 1003, 1004.
+
+\ms Студентов могло быть как 4, \\ так и 6.
+
+\slide{Простые, но не простые-простые}
+
+Для любого $n$ существует нату- \\ ральное число $N$, у которого ровно $n$ различных натуральных дели- \\ телей.
+
+$$\c N \coloneqq 2^{n-1}$$
+
+Его делители — $2^0$, $2^1$, $\c\ldots$, $\c 2^{n-2}$, $\c 2^{n-1}$.
+
+\slide{Розеттский камень}
+
+Алфавит из $n$ букв: сколько букв \\ ни напиши одна поверх другой, \\ их все можно идентифицировать.
+
+\ms Будем двигать по букве {\itshape засечку.}
+
+\smallskip
+
+\begin{center} \tikz{
+	\foreach \x in {-3,...,3} {
+		\dwt (\x cm, -0.4 cm) -- (\x cm, 0.4 cm);
+		\dwt (\x cm - 0.1 cm, -0.4cm) -- (\x cm + 0.1 cm, -0.4cm);
+		\dwt (\x cm - 0.1 cm, 0.4cm) -- (\x cm + 0.1 cm, 0.4cm);
+		\dwt (\x cm - 0.1 cm, 0.1 * \x cm) -- (\x cm + 0.1 cm, 0.1 * \x cm);
+	}
+} \end{center}
+
+\slide{Это кто? Это кот}
+
+\smallskip
+
+\begin{center} \tikz{
+\begin{scope}[scale=0.46]
+	\filldraw[thick,fill=txxt!30!bcck,draw=txxt] (-1.9,-2.8) rectangle (13.75,2.8);
+	\filldraw[thick,fill=txxt!12!bcck,draw=txxt] (-0.5,-2.55) rectangle (13.5,2.55);
+	\dwt (1,0) circle[radius=1cm]
+		++(2.5,0) circle[radius=1.5cm]
+		++(2,0) circle[radius=0.5cm]
+		++ (2.5,0) circle[radius=2cm]
+		++ (3,0) circle[radius=1cm]
+		++ (1.5,0) circle[radius=0.5cm];
+	\draw (-1.42,0) node[rotate=90]{\scriptsize Кольца для котов};
+	\draw (-0.82,0) node[rotate=90]{\tiny\sffamily\itshape Арт.\,231421};
+\end{scope}
+} \end{center}
+
+\ms Каждый сантиметр может либо \\ быть границей колец, либо \\ не быть. Поэтому ответ —
+	$$2^{12}$$
+
+\slide{Конференция анонимных геометров}
+
+На каждой грани куба — по\\ $k$ любителей геометрии.
+
+\ms Максимум — $6k$ человек. \\ А минимум?
+
+\slide{Конференция анонимных геометров}
+
+Разместим людей в вершины, \\ они сразу будут занимать \\ по три места.
+
+\ms Остальных будем сажать \\ на рёбра:
+	$$\c 8 + \frac{6k-24}{2} = 3k-4.$$
+
+\slide{Велопоход}
+
+Проехали $1210$ км. Осталось втрое больше, чем проедет машина, в $4$ раза более быстрая, за время от сейчас до момента, когда останется столько же, сколько проехали.
+
+\ms Пусть осталось $t$. \\ $\c t=12(t-1210)$. $\c t = 1320$.
+
+\ms Расстояние — 2530 км.
+
+\slide{Велопоход}
+
+... Чтобы ответ в задаче составил 1400 км.	 \vspace{-0.2cm}
+
+	$$\c t = 3c \cdot (t-A),\quad t = \frac{3cA}{3c-1}$$
+	$$\c \text{Расстояние\ \ —\ \ } A \cdot \frac{6c-1}{3c-1}$$
+	$$\c \text{Пример\ \ —\ \ } A=100,\ \ c = \frac{13}{36}$$
+
+\slide{Я человек простой}
+
+Дано произведение и среднее \\ арифметическое, можно ли \\ восстановить оценки?
+
+\ms Да, можно: все, кроме $2$ и $4$, вы- \\ делим из разложения на простые.
+
+\ms Заменами $\c 2,\ 2\ \rightarrow\ 4$ добьёмся \\ нужного среднего.
+
+\slide{Оптимальск-на-Туломе}
+
+1 м доски — 6000 руб. — \\ 2 табуретки
+
+\ms 1 м доски + 4 м палок — \\ 10000 руб. — 4 табуретки
+
+\ms Выгоднее пользоваться \\ вторым цехом, пока на это \\ есть деньги.
+
+\slide{Оптимальск-на-Туломе}
+
+Первому цеху нужно кратное \\ 0.5 количество метров доски.
+
+\ms Значит, второму тоже. Он \\ сделает чётное число табуреток.
+
+\slide{Оптимальск-на-Туломе}
+
+\begin{center} \begin{tabular}{|l|}
+\hline
+	\makecell[l]{\ \vspace{-0.3cm} \\ 0.5 м доски — 3000 руб. — \\ 1 табуретка \vspace{0.4cm}} \\
+\hline
+	\makecell[l]{\ \vspace{-0.3cm} \\
+		4.5 м доски + 18 м палок — \\
+		45000 руб. — \\
+		18 табуреток \vspace{0.4cm}
+	} \\
+\hline
+\end{tabular} \end{center}
+
+\slide{ЛПК «Вайда-Губа»}
+
+\vspace{-0.4cm}
+\begin{center}
+	\includegraphics[width=7.7cm]{fpg_av/vguba}
+\end{center}
+
+\slide{Меняем правила под себя}
+
+$1$, $2$, $3$, $\c\ldots$, $\c a-1$, $\c\not{\!a}$, $\c a+1$, $\c\ldots$, $\c N-1$, \\ $N$ камней.
+
+\ms В такой формулировке, если \\ $\c a \ne N$, сразу вытащим все камни. Иначе побеждает второй: \\ $\c x \rightarrow N-x$.
+
+\slide{Меняем правила под себя}
+
+$1$, $2$, $3$, $\c\ldots$, $\c a-1$, $\c\not{\!a}$, $\c a+1$, $\c\ldots$, $\c n-1$, \\ $n$ камней. Всего в кучке $N$.
+
+\ms Если $\c a > \tfrac{n}{2}$, то второй выигрывает при $N$, кратном $a$, иначе выигрывает первый.
+
+\slide{Меняем правила под себя}
+
+Если $\c a \le \tfrac{n}{2}$, то второй \\ выигрывает при $N$ вида
+	$$\c k \cdot (n+a+1),$$ \vspace{-0.6cm}
+	$$\c k \cdot (n+a+1) + a.$$ \vspace{-0.6cm}
+	
+\ms Ответ получается методом \\ анализа позиций.
+
+\def\tas{v_{_{\mathrm{TAS}}}} \def\gs{v_{_{\mathrm{GS}}}}
+
+\slide{С вами говорит капитан}
+
+Известно, что $\c \tas = 900\,\text{км/ч}$, \\ а скорость ветра $\c w =100\,\text{км/ч}$. \\
+Куда дуть ветру, чтобы \\ $\c \gs = 900\,\text{км/ч}$?
+
+\ms {\sffamily\bfseries Не} в бок, потому что \\ Теорема Пифагора.
+
+\slide{С вами говорит капитан}
+
+$T$ — скорость в штиль, \\ $\c (a,b)$ — ветер. \vspace{-0.7cm}
+
+\begin{center}\begin{tabular}{ll}
+\def\TT{0.44 * 8.97216} \def\aa{0.44 * 0.999612} \def\bb{0.44 * -0.0278424}
+\hspace{-0.6cm}\begin{tabular}{l}
+\tikz{
+	\draw [very thick, color=txxt, ->] (0,0) -- (0, \TT cm);
+	\draw (0, 0.5 * \TT cm) node[left]{$T$};
+	\draw [very thick, color=txxt, ->] (0, \TT cm) -- ++(\aa cm, 4*\bb cm);
+	\draw (0.5 * \aa cm, \TT cm + 2*\bb cm) node[above]{$w$};
+	\dwt (0,0) -- (\aa cm, \TT cm + 4*\bb cm);
+	\draw (0.5 * \aa cm, 0.5*\TT cm + 2*\bb cm) node[right]{$\c\tas$};
+}
+\end{tabular}\hspace{-0.35cm}
+&
+\makecell[l]{
+$\c
+\begin{cases}
+	T-b = 900 \\
+	a^2 + b^2 = 100^2 \\
+	(T+b)^2 + a^2 = 900^2
+\end{cases}
+$}
+\end{tabular}\end{center}
+
+\newpage
+\ \\ [0.8cm]
+
+\begin{center}
+	\Large Спасибо за внимание!
+\end{center}
+
+\end{document}
