@@ -1,0 +1,78 @@
+\documentclass[aspectratio=1610,12pt,notheorems]{beamer}
+
+\usepackage[utf8x]{inputenc} \usepackage[russian]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,caption,subcaption}
+\usepackage{hyperref,natbib}
+\usepackage{tikz,xcolor}
+\usepackage{algorithm,algpseudocode}
+
+\usetikzlibrary{arrows,backgrounds,patterns,%
+	matrix,shapes,fit,calc,shadows,plotmarks,snakes}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{problem}{Задача}
+
+\usetheme[height=0.97cm]{Rochester}
+\usecolortheme{dolphin}
+
+\definecolor{hard}{RGB}{140,50,50}
+\definecolor{mnsgold}{RGB}{240,230,200}
+
+\setbeamercolor{headline}{bg=hard,fg=mnsgold}
+\setbeamercolor*{frametitle}{parent=headline}
+
+\setbeamercolor{structure}{fg=hard}
+\setbeamercolor{subsection in head/foot}{bg=white,fg=hard}
+\setbeamercolor{section in head/foot}{bg=hard,fg=mnsgold}
+\setbeamercolor{block title}{bg=hard,fg=mnsgold}
+
+\setbeamertemplate{navigation symbols}{}
+
+\def\mitem{\medskip\item}
+\def\ps{\\ [0.65cm]} \linespread{1.16}
+
+\def\ll{\left(} \def\rr{\right)}
+\def\lag{\left\langle} \def\rag{\right\rangle}
+
+\title[Mathnonstop 2019: the seminar]
+    {\bfseries Математика НОН-СТОП: \\
+	Новое в 2019 году}
+
+\author[\ ]
+	{Б. А. Золотов,\qquad Д. Г. Штукенберг \\ \vspace{0.3cm}
+		{\small Фонд «Время Науки»}}
+
+\institute[\ ]{\ }
+
+\date{8 октября 2019}
+
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Ееее боиии}
+	Sample text.
+
+\begin{block}{Sample title}
+	Sample content
+\end{block}
+
+	Многострочный текст достаточно длинный, чтобы переехал на другую строку, но всё-таки компактный, потому что мне уже надоело это писать, но ещё пару слов добавлю для надёжности.
+\end{frame}
+
+\begin{frame} \begin{center}
+	\Huge{Спасибо за внимание!} \ps
+	\small{Сейчас даже ещё не полночь перед докладом. Прикольно.}
+\end{center} \end{frame}
+
+\end{document}
