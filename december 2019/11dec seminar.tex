@@ -67,29 +67,11 @@
 	{\small Слайды доступны по ссылке: \url{http://bit.ly/mns-seminar-11dec2019}}
 \end{center} \end{frame}
 
-% \input{parts/constructiv}
-% \input{parts/many-ex}
-% \input{parts/grobs}
-
-\begin{frame} \frametitle{Меняем правила под себя}
-$a > \frac{n}{2}$: проигрышные позиции — $k \cdot a$. \ps
-\begin{center} \tikz[scale=0.9]{
-	\draw[thick,->] (-5,0) -- (5,0);
-	\draw (-3,-0.24) -- (-3,0.24) (3,-0.24) -- (3,0.24);
-	\draw (-3,-0.24) node[below]{$ka$} (3,-0.24) node[below]{$(k+1)a$};
-	\draw[thick,->,color=red] (3,0.4) to[out=145,in=0]
-		(0,1.35) node[above]{$a$} to[out=180,in=35] (-3,0.4);
-	\draw[thick,->] (0.8,-0.27) to[out=225,in=0]
-	(-1.2,-1.35) node[below]{$<a$} to[out=180,in=-20] (-3,-0.85);
-} \end{center} \end{frame}
-
-\begin{frame} \frametitle{Меняем правила под себя}
-$a \le \frac{n}{2}$: проигрышные позиции —
-$k \cdot (n+a+1)$, $k \cdot (n+a+1) + a$. \ps
-\end{frame}
-
-% \input{parts/change-stat}
-% \input{parts/simple}
+\input{parts/constructiv}
+\input{parts/many-ex}
+\input{parts/grobs}
+\input{parts/change-stat}
+\input{parts/simple}
 
 \begin{frame} \begin{center} \begin{tabular}{ccc}
 \makecell[c]{\includegraphics[width=2.2cm]{img/hedgehog}} & &
