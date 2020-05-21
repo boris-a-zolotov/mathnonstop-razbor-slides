@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+
+\usepackage{tikz,xcolor,graphicx}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{makecell,colortbl} % \usepackage{fancyhdr}
+
+\usepackage[paperheight=8cm,paperwidth=14.2cm,margin=0.7cm]{geometry}
+\parindent=0cm \parskip=1mm
+
+\definecolor{bcck}{RGB}{131,47,47}
+\definecolor{txxt}{RGB}{230,220,170}
+
+\input{modules/mspec}
+\input{modules/winner}
+
+\begin{document}
+	\pagecolor{bcck} \renewcommand{\c}{\color{txxt}}
+	\newcommand{\megaphantom}{\vphantom{$\int\limits_{0_0}^{0}$}}
+	\newcommand{\slide}[1]{\newpage \begin{center} \bfseries #1 \end{center}}
+
+\begin{center}
+	\ \\ [2.3cm]
+	{\LARGE Начало церемонии в 17:30}
+\end{center}
+
+\newpage \begin{center}
+	{\LARGE Приветственное слово\megaphantom} \\
+	{\huge\itshape И. А. Чистяков\megaphantom} \\
+	{\Large Президент фонда «Время Науки»\megaphantom}
+\end{center}
+
+\newpage \begin{center}
+	{\LARGE Приветственное слово\megaphantom} \\
+	{\huge\itshape Ю. П. Герке\megaphantom} \\
+	{\Large Школа 330, Санкт-Петербург\megaphantom}
+\end{center}
+
+\newpage \begin{center}
+	{\LARGE Приветственное слово\megaphantom} \\
+	{\huge\itshape Т. А. Смирнова\megaphantom} \\
+	{\Large МАОУ Лицей 7, Бердск\megaphantom}
+\end{center}
+
+\input{assets/4po}
+\input{assets/5po}
+\input{assets/6po}
+
+\newpage \begin{center}
+	{\LARGE О задачах олимпиады\megaphantom} \\
+	{\huge\itshape Б. А. Золотов\megaphantom} \\
+	{\Large Зам. пред. методической комиссии\megaphantom}
+\end{center}
+
+\newpage \begin{center}
+	{\Large Наши любимые задачи} \bigskip \\
+	\input{figs/ctowers}
+\end{center}
+
+\newpage \begin{center}
+	{\Large Наши любимые задачи}  \\ [1.6cm]
+	\tikz[scale=0.65]
+{
+   \foreach \x / \y in {
+	1/3,
+	2/3,
+	3/3, 3/4,
+	6/1, 6/2, 6/3,
+	7/3
+   } 
+	\draw[draw=txxt,thick,fill opacity=0.6] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   {
+   \foreach \x / \y in {
+	1/1, 1/2,
+	2/2,
+	3/2,
+	7/2,
+	8/2, 8/3, 8/4
+   } 
+	\draw[draw=txxt,thick,fill=txxt,fill opacity=0.6] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);}
+} \end{center}
+
+\input{assets/46dipl}
+
+\end{document}

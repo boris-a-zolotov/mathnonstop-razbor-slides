@@ -1,0 +1,42 @@
+\def\arise{0.18} \def\brise{0.3} \def\crise{0.42}
+	\tikz[scale=0.8]{ % Подъём 1, 0.6
+	\foreach \t in {0,2,4} {\draw[txxt,thick]
+	     (0,\t) -- ++(0,2) -- ++(-2,0) -- ++(0,-2) -- cycle;}
+    \begin{scope}[xshift=2cm,yshift=-2cm]
+	\fill[txxt] (-3,3) circle (0.15cm); \fill[txxt] (-3.4,3.4) circle (0.15cm);
+	\fill[txxt] (-3.4,2.6) circle (0.15cm); \fill[txxt] (-2.6,3.4) circle (0.15cm);
+	\fill[txxt] (-2.6,2.6) circle (0.15cm);
+    \end{scope}
+    \begin{scope}[xshift=-4cm,yshift=0cm]
+	\fill[txxt] (3.4,3.4) circle (0.15cm); \fill[txxt] (3,3) circle (0.15cm);
+	\fill[txxt] (2.6,2.6) circle (0.15cm);
+    \end{scope}
+    \begin{scope}[xshift=0cm,yshift=2cm]
+	\fill[txxt] (-1.4,3.4) circle (0.15cm); \fill[txxt] (-1.4,2.6) circle (0.15cm);
+	\fill[txxt] (-0.6,3.4) circle (0.15cm); \fill[txxt] (-0.6,2.6) circle (0.15cm);
+    \end{scope}
+%%%%%%%%%%
+	\draw[txxt!50!white,thick] (1,6.6) -- (-1,6.6) -- (-2,6);
+\begin{scope}[xscale=0.5]
+	\foreach \t in {0,2,4} {\draw[txxt,thick]
+	     (0,\t) -- ++(0,2) -- ++(2,0.6) -- ++(0,-2) -- cycle;}
+    \begin{scope}[xshift=2cm,yshift=-4cm]
+	\fill[txxt] (-1.4,5.5+\arise) circle (0.15cm); \fill[txxt] (-0.6,5.5+\crise) circle (0.15cm);
+	\fill[txxt] (-1.4,5+\arise) circle (0.15cm); \fill[txxt] (-0.6,5+\crise) circle (0.15cm);
+	\fill[txxt] (-1.4,4.5+\arise) circle (0.15cm); \fill[txxt] (-0.6,4.5+\crise) circle (0.15cm);
+    \end{scope}
+    \begin{scope}[xshift=4cm,yshift=0cm]
+	\fill[txxt] (-3,3+\brise) circle (0.15cm); \fill[txxt] (-3.4,3.4+\arise) circle (0.15cm);
+	\fill[txxt] (-3.4,2.6+\arise) circle (0.15cm); \fill[txxt] (-2.6,3.4+\crise) circle (0.15cm);
+	\fill[txxt] (-2.6,2.6+\crise) circle (0.15cm);
+    \end{scope}
+    \begin{scope}[xshift=0cm,yshift=2cm]
+	\fill[txxt] (1.4,3.4+\crise) circle (0.15cm); \fill[txxt] (0.6,2.6+\arise) circle (0.15cm);
+    \end{scope}
+\end{scope}
+%%%%%%%%%%
+\begin{scope}[yscale=0.3]
+	\foreach \x in {0.6,1,1.4} {
+		\fill[txxt] (-0.6cm + 0.5 * \x cm, 20 cm + \x cm) circle (0.15cm);
+		\fill[txxt] (-1.4cm + 0.5 * \x cm, 20 cm + \x cm) circle (0.15cm);
+} \end{scope} }
