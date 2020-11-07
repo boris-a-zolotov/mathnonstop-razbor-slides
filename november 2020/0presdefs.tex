@@ -1,0 +1,40 @@
+\usepackage[utf8x]{inputenc} \usepackage[russian]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,caption,subcaption}
+\usepackage{hyperref,natbib}
+\usepackage{tikz,xcolor,makecell}
+\usepackage{algorithm,algpseudocode}
+
+\usetikzlibrary{arrows,backgrounds,patterns,%
+	matrix,shapes,fit,calc,shadows,plotmarks,snakes}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{problem}{Задача}
+
+\usetheme[height=0.97cm]{Rochester}
+\usecolortheme{dolphin}
+
+\definecolor{hard}{RGB}{40,40,128} % {140,50,50}
+\definecolor{mnsgold}{RGB}{255,255,130} % {240,230,200}
+
+\setbeamercolor{headline}{bg=hard,fg=mnsgold}
+\setbeamercolor*{frametitle}{parent=headline}
+
+\setbeamercolor{structure}{fg=hard}
+\setbeamercolor{subsection in head/foot}{bg=white,fg=hard}
+\setbeamercolor{section in head/foot}{bg=hard,fg=mnsgold}
+\setbeamercolor{block title}{bg=hard,fg=mnsgold}
+
+\setbeamertemplate{navigation symbols}{}
+
+\def\mitem{\medskip\item}
+\def\ps{\\ [0.65cm]} \linespread{1.16}
+\def\usl#1#2{\begin{block}{#1} #2 \end{block} \medskip\pause}
+
+\def\ll{\left(} \def\rr{\right)}
+\def\lag{\left\langle} \def\rag{\right\rangle}
