@@ -1,0 +1,103 @@
+\begin{frame} \frametitle{Выигрышные и проигрышные позиции}
+Это метод решения задач на игры, который работает почти всегда, \\
+если у каждой позиции есть простое описание.
+
+Выигрышная позиция — у игрока, начинающего в ней, есть стратегия. \\
+Проигрышная — нет стратегии.
+
+Например, «последняя» позиция — проигрышная. Позиции, \\
+из которых есть ход в «последнюю», — выигрышные.
+\end{frame}
+
+\begin{frame} \frametitle{Теорема о характеризации позиций}
+Выигрышные позиции — такие, из которых есть ход \\
+хотя бы в одну проигрышную.
+
+Проигрышные позиции — такие, ходы из которых \\
+только в выигрышные.
+
+В соответствии с этим утверждением можно проанализировать \\
+все позиции, начиная с конечной.
+\end{frame}
+
+\begin{frame} \frametitle{Примеры}
+В куче $n$ камней, из неё можно вынуть $a_1$, $a_2$, \ldots, $a_k$ камней. \\
+0~камней — проигрышная позиция, остальные расставим. \pause
+
+Двое ходят королём по шахматной доске, можно ходить \\
+только вниз, влево или вниз-влево. \pause
+
+\begin{center} \tikz[scale=0.46]{
+	\fill[turna] (0,0) rectangle (8,8);
+	\fill[turnb] (0,0) rectangle (7,7);
+	\fill[turna] (0,0) rectangle (6,6);
+	\fill[turnb] (0,0) rectangle (5,5);
+	\fill[turna] (0,0) rectangle (4,4);
+	\fill[turnb] (0,0) rectangle (3,3);
+	\fill[turna] (0,0) rectangle (2,2);
+	\fill[turnb] (0,0) rectangle (1,1);
+	\foreach \x in {0,...,8} {
+		\draw[gray] (0,\x) -- (8,\x) (\x,0) -- (\x,8);
+	}
+} \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Игра Ним}
+	Имеется $k$ кучек, в них $N_1$, $N_2$, \ldots, $N_k$ камней. Можно вынуть сколько угодно камней, но только из одной кучи. \medskip
+
+\begin{center} \tikz[scale=1.3]{
+	\draw (0,0) rectangle ++(0.6,1.2);
+	\draw (1,0) rectangle ++(0.6,1.7);
+	\draw (2,0) rectangle ++(0.6,0.9);
+	\draw (3,0) rectangle ++(0.6,1.5);
+	\draw (4,0) rectangle ++(0.6,1.2);
+	\draw (5,0) rectangle ++(0.6,0.8);
+}\end{center}
+\end{frame}
+
+
+\begin{frame} \frametitle{Ним-сумма}
+	Переведём размеры кучек в двоичную систему и сложим \\
+	без переноса разрядов.
+
+	То же самое, что разложить в сумму степеней двойки \\
+	и посмотреть, каких из них нечётное число. \medskip
+
+\begin{center}\begin{tabular}{cccc}
+2 & 8 & 10 & 11 \\
+{\small 10} & {\small 1000} & {\small 1010} & {\small 1011}
+\end{tabular}
+
+Ним-сумма — $1011$. \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Свойства ним-суммы} \ \\ [-0.4cm]
+	Коммутативна, ассоциативна, $x \oplus x = 0$. \vspace{-0.8cm}
+\renewcommand{\sb}{S_{\text{before}}}
+\newcommand{\sa}{S_{\text{after}}}
+
+\begin{align*}
+&	\sa = \sa \oplus 0 = \sa \oplus \sb \oplus \sb = \\
+= &	(x_1 \oplus y_1) \oplus \ldots \oplus (x_k \oplus y_k) \oplus \sb = \\
+= & (x_i \oplus y_i) \oplus \sb \\
+\end{align*} \vspace{-1.3cm} \pause
+
+$y_i = x_i \oplus (x_i \oplus \sb)$, тогда $x_i \oplus x_i \oplus \sb \oplus \sb = 0$. \pause
+
+\begin{center}\begin{tabular}{cccc}
+2 & 8 & 10 & 11 \\
+{\small 10} & {\small 1000} & {\small 1010} & {\small 1011} \\
+\multicolumn{4}{c}{Ним-сумма — $1011$.} \\ \pause
+\phantom{ававав} & \phantom{ававав} & \phantom{ававав} & \phantom{ававав} \\
+{\small $1001$} & {\small $11$} & {\small $1$} & {\small $0$} \\
+\end{tabular} \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Позиции в игре Ним}
+\begin{itemize} \itemsep=2.6mm
+	\item Из любой позиции с ненулевой ним-суммой можно походить \\
+	в позицию с нулевой.
+	\item При ходе из любой позиции с нулевой ним-суммой — \\
+	она становится ненулевой.
+\end{itemize}
+\end{frame}
