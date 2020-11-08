@@ -29,13 +29,11 @@
 
 \begin{center} \tikz[scale=0.46]{
 	\fill[turna] (0,0) rectangle (8,8);
-	\fill[turnb] (0,0) rectangle (7,7);
-	\fill[turna] (0,0) rectangle (6,6);
-	\fill[turnb] (0,0) rectangle (5,5);
-	\fill[turna] (0,0) rectangle (4,4);
-	\fill[turnb] (0,0) rectangle (3,3);
-	\fill[turna] (0,0) rectangle (2,2);
-	\fill[turnb] (0,0) rectangle (1,1);
+	\foreach \x in {0,2,4,6} {
+	    \foreach \y in {0,2,4,6} {
+		\fill[turnb] (\x,\y) rectangle ++(1,1);
+	    }
+	}
 	\foreach \x in {0,...,8} {
 		\draw[gray] (0,\x) -- (8,\x) (\x,0) -- (\x,8);
 	}
@@ -99,5 +97,7 @@ $y_i = x_i \oplus (x_i \oplus \sb)$, тогда $x_i \oplus x_i \oplus \sb \oplu
 	в позицию с нулевой.
 	\item При ходе из любой позиции с нулевой ним-суммой — \\
 	она становится ненулевой.
+	\item Значит, позиции с нулевой ним-суммой — проигрышные, \\
+	с ненулевой — выигрышные.
 \end{itemize}
 \end{frame}
