@@ -32,10 +32,7 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-\def\mitem{\medskip\item}
-\def\ps{\\ [0.65cm]} \linespread{1.16} \parskip=2.6mm
-\def\usl#1#2{\begin{block}{#1} #2 \end{block} \medskip\pause}
-
+\parskip=2.6mm
 \def\ll{\left(} \def\rr{\right)}
 \def\lag{\left\langle} \def\rag{\right\rangle}
 
@@ -57,3 +54,9 @@
 \newcommand{\coldescription}[1]{\tikz{
 	\draw (0,0) node{\vseper}; \draw (0.8,0) node{\vseper #1};
 }}
+
+\def\mitem{\medskip\item}
+\def\ps{\\ [0.65cm]} \linespread{1.16}
+\def\fram#1#2{\begin{frame}\frametitle{#1}#2\end{frame}}
+\def\usl#1{\begin{block}{Условие} #1 \end{block} \medskip\pause}
+\def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
