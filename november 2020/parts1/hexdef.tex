@@ -1,0 +1,18 @@
+\def\dwtc{\draw[very thick] }
+\def\dtc{\draw[thick] }
+\def\dtcg{\draw[thick,color=gray,opacity=0.68] }
+\def\dcw{\draw[color=white] }
+
+\def\hexnhex#1{\tikz[scale=0.73]{
+    \dcw (-0.3,1) rectangle (0,2); \dcw (3,1) rectangle (3.3,2);
+    \foreach \x in {1,...,5} {
+	\draw[color=gray, opacity=0.38] (0, 0.5 * \x cm) -- (3, 0.5 * \x cm);
+	\draw[color=gray, opacity=0.38] (0.5 * \x cm, 0) -- (0.5 * \x cm, 3);
+    }
+    \dtc (0,0) -- (0,3) -- (3,3) -- (3,0) -- cycle;
+    \dtc #1;
+}}
+
+\def\kra{-- ++(0,-0.5) -- ++(-0.5,0) -- ++(0,-0.5) -- ++(0.5,0)}
+\def\krb{-- ++(0,-0.5) -- ++(0.5,0) -- ++(0,-0.5) -- ++(-0.5,0)}
+\def\tabrow#1{\begin{center}\begin{tabular}{ccc} #1 \end{tabular}\end{center}}
