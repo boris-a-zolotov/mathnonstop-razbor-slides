@@ -113,13 +113,19 @@ Define the potential function as
 \end{frame}
 
 \begin{frame} \frametitle{$\sqrt{n}$ Relabels amortized}
-Each time we relabel we steal someone's children. Let $s$ be the number of children transferred.
+Each time we relabel we steal someone's children or delete a node. Let $s$ be the number of children transferred.
 
 \begin{align*}
-	& s + \Phi_{\text{new}} - \Phi_{\text{old}} = \\
-=\ 	& s + \sqrt{n} - (s - \sqrt{n}).
+	& s + \Phi_{\text{new}} - \Phi_{\text{old}} \le \\
+\le\ 	& s + \sqrt{n} - (s - \sqrt{n}).
 \end{align*}
 
+\end{frame}
+
+\begin{frame} \frametitle{But is that really $\sqrt{n}$?}
+\begin{figure}
+	\includegraphics[height=0.92\textheight]{algolunch/sqrtn}
+\end{figure}
 \end{frame}
 
 \end{document}
