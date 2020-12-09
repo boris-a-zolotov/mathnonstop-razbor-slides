@@ -1,0 +1,42 @@
+\documentclass[aspectratio=1610,12pt,notheorems]{beamer}
+
+\input{0presdefs}
+
+\title{\bfseries Davenport—Schinzel Sequences}
+
+\author{Boris Zolotov, Algo Lunch}
+
+\institute[\ ]{\ }
+
+\date{December 9, 2020}
+
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame} \frametitle{Definition}
+
+\begin{block}{\vspace*{-3ex}}
+	D—S sequence of order $n$: no {\it sebsequences} $a \ldots$ $b\ldots$ $a \ldots$ $b\ldots$ of length $n+2$
+\end{block}
+
+	Motivation: lower envelope of continuous functions that coincide at no more than $n$ points.
+
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{algolunch/ds-segments}
+\end{center}
+
+	For each segment we can also construct the set of functions. \vspace{1cm}
+
+\end{frame}
+
+\begin{frame} \frametitle{Voronoi diagrams and the beach line}
+\begin{center}
+	\includegraphics[width=0.48\textwidth]{algolunch/example}
+\end{center}
+\end{frame}
+
+\end{document}
