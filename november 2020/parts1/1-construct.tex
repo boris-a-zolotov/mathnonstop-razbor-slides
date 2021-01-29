@@ -1,0 +1,75 @@
+\section[Задачи на приведение примера]{1. Constructive Problems}
+
+\begin{frame} \frametitle{Разрезания}
+	\usl{2020-5-1C}{
+		Можно ли нарисовать на клетчатом листе бумаги такую фигуру, которую можно разрезать по линиям сетки на две {\itshape одинаковые} фигуры двумя способами~— причём фигуры в первом и во втором способе были бы одни и те же, но линии разреза выглядели бы по-разному?
+	}
+
+\begin{center} \tikz[scale=0.75]
+{
+   \foreach \x / \y in {
+	1/3, 2/3, 3/3, 3/4, 6/1, 6/2, 6/3, 7/3
+   } 
+	\draw[thick,fill opacity=0.6] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   {
+   \foreach \x / \y in {
+	1/1, 1/2, 2/2, 3/2, 7/2, 8/2, 8/3, 8/4
+   } 
+	\draw[thick,fill=gray,fill opacity=0.6] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+	\node at (1.5,2.5) {$A$};
+	\node at (3.5,3.5) {$B$};
+	\node at (6.5,3.5) {$B$};
+	\node at (8.5,2.5) {$A$};
+}
+} 
+\end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Сумма цифр}
+\usl{2017-8-2C}{
+	Придумайте (или расскажите, как построить) 95-значное число, в котором нет нулей и которое делится на свою сумму цифр.
+}
+Придумаем число, делящееся на $144=9\cdot 16$:
+$$\underbrace{.\ .\ .\ .\ .\ .\ .}_{\begin{minipage}{2cm}
+	\scriptsize разрядов — 91, \\
+	$\sum$ цифр — 134
+\end{minipage}}3232.$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Лабиринт}
+
+\usl{2019-7-8C}{
+Путник в лабиринте видит ситуацию вокруг. Помимо этого, никакой другой 
+информации и памяти у него нет. Существует ли какой-нибудь набор правил, чтобы он, 
+имея только эту информацию, мог дойти до финальной клетки в любом лабиринте?} \vspace{4mm}
+
+Заметим, что поведение путника однозначно определено в простых ситуациях:
+
+\begin{center} \tikz[scale=0.8]{\begin{scope}[xshift=-3cm]
+	\fill[pattern=north east lines] (0,0) -- (0,1) -- (1,1) -- (1,0) -- (1.7,0) -- (1.7,1.7) -- (-0.7,1.7) -- (-0.7,0) -- cycle;
+	\draw (0,0) -- (0,1) -- (1,1) -- (1,0);
+	\filldraw (0.5,0.5) circle[radius=1.2mm]; \end{scope}
+\begin{scope}[xshift=2cm]
+	\fill[pattern=north east lines] (-0.7,-0.2) rectangle (0,1.2) (1,-0.2) rectangle (1.7,1.2);
+	\draw (0,-0.2) -- (0,1.2) (1,-0.2) -- (1,1.2);
+	\filldraw (0.5,0.5) circle[radius=1.2mm];
+\end{scope}} \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Лабиринт}
+
+Приведём решение без $T$-образных перекрёстков, чтобы о них не думать: \ps\pause
+
+\begin{center} \tikz[scale=1.14]{
+	\draw (-3,0) ++(0.15,0.15) rectangle ++(5.7,3.7);
+	\foreach \x in {-3,...,2} {
+	    \foreach \y in {0,...,3} {
+		\draw[pattern=north east lines] (\x, \y) ++(0.15,0.15) --
+		    ++(0,0.7) -- ++(0.7,0) -- ++(0,-0.7) -- ++(-0.7,0);
+	    };
+	};
+	\draw (2,3.65) node{\itshape\footnotesize Ф};
+	\filldraw (0,1.5) circle[radius=0.56mm];
+} \end{center} \end{frame}

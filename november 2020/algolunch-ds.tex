@@ -1,0 +1,131 @@
+\documentclass[aspectratio=1610,12pt,notheorems]{beamer}
+
+\input{0presdefs}
+
+\title{\bfseries Davenport—Schinzel Sequences}
+
+\author{Boris Zolotov, Algo Lunch}
+
+\institute[\ ]{\ }
+
+\date{December 9, 2020}
+
+%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame} \frametitle{Definition}
+
+\begin{block}{\vspace*{-3ex}}
+	D—S sequence of order $n$: no {\it sebsequences} $a \ldots$ $b\ldots$ $a \ldots$ $b\ldots$ of length $n+2$
+\end{block}
+
+	Motivation: lower envelope of continuous functions that coincide at no more than $n$ points.
+
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{algolunch/ds-segments}
+\end{center}
+
+	For each segment we can construct the set of functions. \vspace{1cm}
+
+\end{frame}
+
+\begin{frame} \frametitle{Voronoi diagrams and the beach line}
+\begin{center}
+	\includegraphics[width=0.48\textwidth]{algolunch/example}
+\end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Changes and cost model}
+
+\begin{block}{\vspace*{-3ex}} \vspace{-2.2ex}
+	$$\text{\bf Insert} (a_{k+1})$$
+\end{block}
+
+\begin{block}{\vspace*{-3ex}} \vspace{-2.2ex}
+	$$\text{\bf Relabel} (a_j, a_{k+1}, S)$$
+\end{block}
+
+	$$\text{\bf Delete} \colon\quad a_{k+1}a_{k+1}\ 
+	    \rightarrow\ a_{k+1}$$
+
+\end{frame}
+
+\begin{frame} \frametitle{Two Inserts per step}
+
+\begin{block}{\vspace*{-3ex}}
+Restate that maximal length of D—S sequence is $2n-1$ in «amortized fashion».
+\end{block}
+
+\begin{itemize}
+	\item Between two occurences of letter $x$ some letters are «trapped». \medskip
+	\item We give 2 pennies to each letter initially. \medskip
+	\item Idea: each letter pays for its father. \medskip
+	\item Invariants: each letter with $k$ instances receives at least $k-1$ pennies from its descendants, can pay one to its father. \medskip
+	\item Finally, all the occurences are paid for.
+\end{itemize} \vspace{1cm}
+\end{frame}
+
+\begin{frame} \frametitle{Location of Relabels}
+\begin{block}{\vspace*{-3ex}}
+	Letters that we relabel form a union of subtrees with their roots located on the same level and having a common father.
+\end{block}
+
+\begin{figure} \centering
+	\includegraphics[width=0.34\textwidth]{algolunch/sametree} \hspace{1.5cm}
+	\includegraphics[width=0.34\textwidth]{algolunch/samelevel}
+\end{figure}
+\end{frame}
+
+\begin{frame} \frametitle{What happens to the tree when we relabel} \vspace{1cm}
+
+	We can think that relabels happen from top down: this order does not disrupt the D—S property.
+
+\begin{figure} \centering
+	\includegraphics[width=0.7\textwidth]{algolunch/firstpush}
+\end{figure}
+\end{frame}
+
+\begin{frame} \frametitle{What happens to the tree when we relabel} \vspace{1cm}
+
+	When we relabel vertices on lower levels we make their children our clidren. We can think of it as a subtree contracted into a single vertex.
+
+\begin{figure} \centering
+	\includegraphics[width=0.7\textwidth]{algolunch/furtpush}
+\end{figure}
+\end{frame}
+
+\begin{frame} \frametitle{Size and potential}
+	Define size of the node as number of its children $+1$.
+
+\begin{block}{\vspace*{-3ex}} \vspace{-1.8ex}
+	$$2n\ \ge\ \sum\limits_v \mathrm{size}\, (v)\ \ge\ \mathrm{length}\, (S)$$ \vspace{-1ex}
+\end{block}
+
+Define the potential function as
+\begin{block}{\vspace*{-3ex}} \vspace{-1.8ex}
+	$$\sum\limits_v \min \left( \mathrm{size}\, (v), \sqrt{n} \right)$$ \vspace{-1ex}
+\end{block}
+
+\end{frame}
+
+\begin{frame} \frametitle{$\sqrt{n}$ Relabels amortized}
+Each time we relabel we steal someone's children or delete a node. Let $s$ be the number of children transferred.
+
+\begin{align*}
+	& s + \Phi_{\text{new}} - \Phi_{\text{old}} \le \\
+\le\ 	& s + \sqrt{n} - (s - \sqrt{n}).
+\end{align*}
+
+\end{frame}
+
+\begin{frame} \frametitle{But is that really $\sqrt{n}$?}
+\begin{figure}
+	\includegraphics[height=0.92\textheight]{algolunch/sqrtn}
+\end{figure}
+\end{frame}
+
+\end{document}
