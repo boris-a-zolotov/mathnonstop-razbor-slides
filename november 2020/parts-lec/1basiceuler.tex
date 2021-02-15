@@ -1,0 +1,58 @@
+\begin{frame} \frametitle{Количество звёзд с $d$ ломаными}
+	Количество чисел $k$: $\text{НОД}\,(n,k) = d$.\\[0.6cm] \pause
+	Поделим всё на $d$: мы ищем числа от $1$ до $\frac{n}{d}$, {\it взаимно простые} с $\frac{n}{d}$\\ (мы исчерпали общий делитель делением на $d$).\\[0.6cm]
+	Количество таких чисел обозначается $\vfi\ll\frac{n}{d}\rr$.\\[0.6cm] \pause
+     \begin{theorem} \vspace{-3.5mm}
+	\[\sum\limits_{n\,\divsby\,d} \varphi \ll\frac{n}{d}\rr = n.\] \vspace{-2mm}
+     \end{theorem}
+\end{frame}
+
+\begin{frame} \frametitle{Функция Эйлера: примеры}
+   \begin{center} \begin{tabular}{ll}
+	$\vfi\ll 10\rr = 4$ & 1, 3, 7, 9 \\ \\
+	$\vfi\ll 5 \rr = 4$ & 1, 2, 3, 4 \\ \\
+	$\vfi\ll 2 \rr = 1$ & 1 \\ \\
+	$\vfi\ll 1 \rr = 1$ & 1 \\ \\
+	$4+4+1+1 = 10$
+   \end{tabular} \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Функция Эйлера: базовые свойства}
+	\begin{theorem} \vspace{-4.5mm} \[ \vfi(p) = p-1 \] \vspace{-5mm} \end{theorem}
+	\vspace{-2mm}
+
+	Все числа от 1 до $p-1$.\bigskip\pause
+
+	\begin{theorem} \vspace{-3.5mm} \[ \vfi(p^k) =\pause p^k \cdot \frac{p-1}{p} \] \vspace{-4mm} \end{theorem}
+	\vspace{-2mm}
+
+	Быть взаимно простым с $p^k$ — то же, что\\
+	не делиться на $p$. Каждое $p$-ое\\
+	число делится на $p$.
+\end{frame}
+
+\begin{frame} \frametitle{$\vfi\ll n \rr$ чётно при $n \ne 1$}
+   \begin{center} \tikz{
+	\foreach \i in {1,3,7,9} {\fill[hard,opacity=0.4] (\i, 0) circle[radius=2.6mm];}
+	\foreach \i in {1,...,10} {\draw (\i, 0) node{\i};}
+   } \end{center}
+
+	Числа, взаимно простые с 10, расположены симметрично.\\ [0.8cm] \pause
+
+	\begin{theorem} \vspace{-4.5mm} \[ \text{НОД}\,(n,k) = \text{НОД}\,(n,n-k) \] \vspace{-5mm} \end{theorem} \vspace{-2mm}
+
+	Доказательство: общие делители чисел в паре слева\\
+	и в паре справа одни и те же. Эта теорема называется\\
+	{\it алгоритм Евклида.}
+\end{frame}
+
+\begin{frame} \frametitle{$\vfi\ll n \rr$ чётно при $n \ne 1$}
+   \begin{center} \tikz{
+	\foreach \i in {1,3,7,9} {\fill[hard,opacity=0.4] (\i, 0) circle[radius=2.6mm];}
+	\foreach \i in {1,...,10} {\draw (\i, 0) node{\i};}
+   } \end{center}
+
+	Если $n$ чётно, то посередине будет находиться число $\frac{n}{2}$,\\
+	которое {\it не} взаимно просто с $n$. Если $n$ нечётно,\\
+	то чисел $1 \ldots n-1$ — чётное количество.
+\end{frame}

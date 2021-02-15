@@ -1,0 +1,52 @@
+\begin{frame} \frametitle{Формула для функции Эйлера}
+	$n = p_1^{k_1} \cdot p_2^{k_2} \cdot \ldots \cdot p_m^{k_m}$ — разложение на простые.\\ [0.8cm]
+
+   \begin{theorem}
+	\[ \vfi(n) = n \cdot \frac{p_1 - 1}{p_1} \cdot \frac{p_2 - 1}{p_2} \cdot \ldots \cdot \frac{p_m - 1}{p_m} \]\ 
+   \end{theorem}\vspace{3mm} \pause
+
+	\textcolor{hard}{\bf Идея доказательства: } выкинуть все числа, делящиеся на $p_1$.	Затем\\
+	выкинуть все числа, делящиеся на $p_2$, которые не были выкинуты ранее\\
+	 (например, не выкинуть $p_1 p_2$ ещё раз). Затем выкинуть все числа,\\
+	 делящиеся на $p_3$...
+\end{frame}
+
+\begin{frame} \frametitle{Выкидываем делящиеся на $p_1$}
+	Каждое $p_1$-ое число делится на $p_1$. Разделим $n$ на блоки\\
+	по $p_1$ чисел, из каждого выкинем по одному числу.\\
+	Останется \vspace{-5mm}
+	
+	\[ n \cdot \frac{p_1 - 1}{p_1}. \] \vspace{3mm}
+	
+	Это должно напоминать формулу $\vfi\ll p^k \rr$.
+\end{frame}
+
+\begin{frame} \frametitle{Выкидываем делящиеся на $p_k$}
+	Требуется оставить числа, которые не делятся на $p_k$,\\
+	а также не делятся ни на одно из чисел $p_1,\ldots,p_{k-1}$.\medskip
+	
+	$x \divsby p_i\ \Longleftrightarrow\ p_k \cdot x \divsby p_i$.\quad Отсюда доля чисел, делящихся\\
+	на $p_1,\ldots,p_{k-1}$, одинакова {\it вообще} и среди чисел, кратных $p_k$.\\
+	А, значит, и среди чисел, не кратных $p_k$.
+	
+	\[ n \cdot
+		\underbrace{ \frac{p_k-1}{p_k} }_{\begin{minipage}{2.1cm}\centering\scriptsize
+			считаем \\ долю среди \\ не кратных $p_k$
+		\end{minipage}}
+		\cdot \ll
+		\underbrace{ \frac{p_1 - 1}{p_1} \cdot \ldots \cdot
+		     \frac{p_{k-1} - 1}{p_{k-1}}}_{\begin{minipage}{3.5cm}\centering\scriptsize
+			выяснили ранее
+		     \end{minipage}}
+		\rr\]
+\end{frame}
+
+\begin{frame} \frametitle{Мультипликативность функции Эйлера}
+\[ \vfi(n) = n \cdot \frac{p_1 - 1}{p_1} \cdot \frac{p_2 - 1}{p_2} \cdot \ldots \cdot \frac{p_m - 1}{p_m} \] \vspace{5mm}
+
+\begin{theorem} \vspace{2mm}
+	Если числа $a$ и $b$ взаимно просты, то $\vfi(a \cdot b) = \vfi(a) \cdot \vfi(b)$.  \vspace{3mm}
+\end{theorem} \vspace{5mm}
+
+\textcolor{hard}{\bf Упражнение: } сперва доказать мультипликативность $\vfi$,\\ а потом из неё вывести формулу.
+\end{frame}
