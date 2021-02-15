@@ -1,0 +1,73 @@
+\begin{frame} \frametitle{На 9 мая все рисовали звезду}
+     \begin{center} \resizebox{!}{0.45\textheight}{
+	\tikz{\nkstar{5}{2}}
+     } \end{center}
+     \pause
+     \begin{enumerate}
+	\item Состоит из одной ломаной — рисуется одним росчерком пера;
+	\item Соединяет любые две точки на расстоянии 2.
+     \end{enumerate}
+\end{frame}
+
+\begin{frame} \frametitle{И другую звезду}
+     \begin{center} \resizebox{!}{0.45\textheight}{
+	\tikz{\nkstar{6}{2}}
+     } \end{center}
+     \begin{enumerate}
+	\item Состоит уже из двух ломаных;
+	\item Соединяет любые две точки на расстоянии 2.
+     \end{enumerate}
+\end{frame}
+
+\begin{frame} \frametitle{Для 7 точек интересных звёзд уже несколько}
+     \begin{center} \resizebox{!}{0.45\textheight}{
+	\tikz{\nkstar{7}{2}}\qquad \tikz{\nkstar{7}{3}}
+     } \end{center}
+     \pause
+     Введём обозначение: это $(7,2)$- и $(7,3)$-звёзды.\\ Их же будем называть $(7,5)$ и $(7,4)$.
+\end{frame}
+
+\begin{frame} \frametitle{Неинтересные звёзды — тоже звёзды}
+     \begin{center} \resizebox{!}{0.42\textheight}{
+	\tikz{\nkstar{11}{0}}\qquad \tikz{\nkstar{9}{1}}\qquad \tikz{\nkstar{12}{6}}
+     } \end{center}
+     \begin{center} Звёзды для $0$, $1$, $n / 2$. \end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Ещё примеры}
+     \begin{center} \resizebox{!}{0.42\textheight}{
+	\tikz{\nkstar{9}{3}}\qquad \tikz{\nkstar{10}{4}}\qquad \tikz{\nkstar{8}{3}}
+     } \end{center}
+     \begin{center}$(9,3)$ — 3 ломаных\qquad $(10,4)$ — 2 ломаных\qquad $(8,3)$ — 1 ломаная\end{center}
+\end{frame}
+
+\begin{frame} \frametitle{Вопросы}
+     \begin{enumerate}
+	\item Из скольки ломаных состоит $(n,k)$-звезда? \medskip
+	\item Сколько звёзд состоят ровно из $m$ ломаных? \medskip
+	\item Можно ли из этого получить интересный математический факт?
+     \end{enumerate}
+\end{frame}
+
+\begin{frame} \frametitle{Будем следить за одной ломаной}
+	По принципу Дирихле, рано или поздно она придёт в точку,\\ в которой уже была. \pause
+     \begin{center} \resizebox{!}{0.45\textheight}{\tikz{
+	\foreach \i in {0,...,6} {\draw[thick] (90 - 360 * 6 * \i / 16 : 3.5)
+		-- (90 - 360 * 6 * \i / 16 - 360 * 6 / 16 : 3.5);}
+	\draw[thick] (360 * 10 / 16 : 3.5) to[bend left] (360 * 2 / 16 : 3.5);
+	\foreach \i in {0,...,15} {\fill[starvert] (90 + 360 * \i / 16 : 3.5) circle[radius=0.16cm];}
+     }} \end{center}
+	На самом деле, это будет точка, из которой ломаная начиналась.
+\end{frame}
+
+\begin{frame} \frametitle{Количество вершин в одной ломаной}
+Ломаная прошла целое число оборотов. Если дело происходит\\ в $(n,k)$-звезде, в одной ломаной $r$ вершин, тогда
+	\[ k \cdot r\ \divsby\ n.\]
+
+Минимальное такое число $r$:
+	\[ r = \frac{n}{\text{НОД}\,(n,k)}. \] \pause
+
+\begin{theorem}
+	$(n,k)$-звезда состоит из $\text{НОД}\,(n,k)$ ломаных.
+\end{theorem}
+\end{frame}
