@@ -1,0 +1,30 @@
+\begin{frame} \frametitle{Что мы знаем про функцию Эйлера}
+   \begin{enumerate}
+	\item Явная формула для функции Эйлера,\vspace{0.6cm}
+	\item Мультипликативность функции Эйлера,\vspace{0.6cm}
+	\item Число $n$ равно сумме значений $\vfi (d)$ для своих делителей.
+   \end{enumerate}
+\end{frame}
+
+\begin{frame} \frametitle{Другие мультипликативные функции}
+   \begin{enumerate}
+	\item $e(1) = 1$,\quad $e(n) = 0$ для $n \ne 1$.
+	\litem $I(n) = 1$ для всех $n$;\hspace{1.2cm} $\mathbb{I}\mathrm{d} (n) = n$.
+	\litem $\vfi(n)$ — функция Эйлера.
+	\litem $\tau(n)$ — количество делителей числа $n$.
+	\litem $\mu(n)$ — функция Мёбиуса:
+	   \[ \mu(n) = \begin{cases}
+		0, & n \divsby p^2 \\
+		1, & n = p_1 \cdot p_2 \cdot\ldots\cdot p_{2k} \\
+		-1, & n = p_1 \cdot p_2 \cdot\ldots\cdot p_{2k+1} \\
+	   \end{cases} \]
+   \end{enumerate}
+\end{frame}
+
+\begin{frame} \frametitle{Другая интересная формула}
+     \begin{theorem} \vspace{-1.5mm}
+	\[\varphi(n) = \sum\limits_{n\,\divsby\,d} d \cdot \mu \ll\frac{n}{d}\rr.\] \vspace{-0.5mm}
+     \end{theorem} \vspace{0.5cm}
+
+	Её можно доказать «просто так», а можно с помощью\\ важного инструмента под названием {\it свёртка.}
+\end{frame}
