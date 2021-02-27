@@ -1,0 +1,373 @@
+\documentclass[11pt]{beamer}
+\definecolor{spoiler}{gray}{0.6}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{xcolor}
+\usepackage{MnSymbol}
+\usepackage{mathrsfs}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{amssymb,amsmath, dsfont, amsthm}
+\usepackage{hyperref}
+\hypersetup{unicode=true}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{tikz,makecell}
+\usepackage{wrapfig}
+\usepackage{xfrac}
+\usepackage{qrcode}
+
+\usetheme{Berlin}
+
+\usecolortheme{dolphin}
+\title[Лекция <<Вокруг $\sqrt{2}$>>]
+	{\bfseries Лекция <<Вокруг $\sqrt{2}$>>}
+\author[Тодоров Е.И.]{Тодоров Е.И.}
+\institute{Фонд <<Время науки>>}
+\date{\today}
+
+\newtheorem{Th}{Теорема}
+\newtheorem{Def}{Определение}
+\newtheorem{Ex}{Пример}
+\newtheorem{Proposition}{Предложения}
+\newtheorem{Property}{Свойство}
+\newtheorem{Prof}{Доказательство}
+\newtheorem{Profcont}{Доказательство (продолжение)}
+
+\newcommand\fram[2]{\begin{frame}{\bf #1} #2 \end{frame}}
+\newcommand{\comm}[1]{$\backslash$\texttt{#1}}
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\def\mitem{\medskip\item}
+\newcommand{\myref}[2]{\href{#1}{\texttt{\underline{#2}}}}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+
+
+\begin{document}
+\section{ }
+\begin{frame}\titlepage\end{frame}
+
+\fram{Эта презентация онлайн}{
+\Large
+\begin{center}
+Зачем фотографировать презентацию, \\
+		когда её можно скачать? \\[0.3cm]
+		\qrcode[height=5cm]{https://bit.ly/1_lecture_sqrt2}
+\end{center}
+}
+
+\section{A4}
+\fram{Лист A4}{
+\begin{wrapfigure}{L}{0.5\textwidth}
+\vspace{-17mm}
+  \begin{center}
+    \tikz[scale=0.022]{
+    \draw[black,thick] (0,0)--(210,0)--(210,297)--(0,297)--(0,0);
+    \draw[black,thick,dashed] (0,148.5)--(210,148.5);
+    \draw (105,297) node[anchor=north] {$a$};
+    \draw (210,148.5) node[anchor=west] {$b$};
+    \draw (0,74.25) node[anchor=west] {$\frac{b}{2}$};
+    \draw (0,222.75) node[anchor=west] {$\frac{b}{2}$};
+    }
+  \end{center}
+\end{wrapfigure}
+
+Свойство сторон листа A4 \linebreak (всех листов формата A):
+$$a:b = \frac{b}{2}:a,$$
+
+откуда
+$$b^2 = 2a^2.$$
+}
+
+\section{$\sqrt{2}$}
+\fram{}{
+\
+\vspace{-15mm}
+\begin{Def}
+Для числа $s \ge 0$ квадратным корнем из $s$ будем называть такое число $t \ge 0$, что $t^2 = s$. Пишут $t = \sqrt{s}$.
+\end{Def}
+\begin{Ex}
+\vspace{-7mm}
+$$\sqrt{1} = 1, \qquad \sqrt{4} = 2, \qquad \sqrt{\frac{25}{4}} = \frac{5}{2}, \qquad \sqrt{2} = 1.414213\ldots$$
+\vspace{-5mm}
+\end{Ex}
+\begin{Property}
+\vspace{-4mm}
+$$s \ge 0 \qquad \left(\sqrt{s}\right)^2 = s = \sqrt{s^2}$$
+\vspace{-6mm}
+\end{Property}
+\begin{Property}
+\vspace{-4mm}
+$$s, r \ge 0 \qquad \sqrt{s \cdot r} = \sqrt{s} \cdot \sqrt{r}$$
+\vspace{-6mm}
+\end{Property}
+}
+
+\fram{$\sqrt{2}$}{
+Применим описанные свойства к соотношению $b^2 = 2a^2$:
+\begin{align*}
+    \sqrt{b^2} &= \sqrt{2a^2}\\
+    \sqrt{b^2} &= \sqrt{2}\sqrt{a^2}\\
+    b &= \sqrt{2}a\\
+    \frac{b}{a} &= \sqrt{2}.
+\end{align*}
+\textbf{Вопрос:} можно ли найти такие целые $a$ и $b$?
+}
+
+\section{Числовые множества}
+\fram{Числовые множества}{
+\begin{itemize}
+    \item Натуральные числа: $\mathbb{N} = \set{1, 2, 3, 4, 5, \ldots}$ \vspace{3mm}
+    \item Целые числа: $\mathbb{Z} = \set{\ldots, -2, -1, 0, 1, 2, \ldots}$ \vspace{3mm}
+    \item Попробуем теперь собрать все дроби $\frac{b}{a}$: \vspace{2mm}
+    \begin{itemize}
+        \item $\frac{-3}{5} = \frac{3}{-5}$. Берём $b$ любое, а $a$ --- только положительное. \vspace{2mm}
+        \item $\frac{1}{2} = \frac{2}{4} = \frac{3}{6} = \frac{4}{8} = \ldots$.
+        Берём только несократимые дроби. То есть у $b$ и $a$ не должно быть общих делителей. \vspace{1mm}
+    \end{itemize}
+    \item Рациональные числа (дроби): 
+    $$\mathbb{Q} = \set{\frac{b}{a} \,\,\middle|\,\, b - \text{целое}, a - \text{натуральное}, \frac{a}{b} - \text{несократимая}}.$$
+\end{itemize}
+}
+
+\section{Теорема Аристотеля}
+\fram{Теорема Аристотеля}{
+\begin{Th}
+Число $\sqrt{2}$ не живёт в $\mathbb{Q}$. То есть не существует таких целых $a$ и $b$, что $\frac{b}{a} = \sqrt{2}$, где $\frac{b}{a}$ --- \underline{несократимая дробь}.
+\end{Th}
+\begin{Prof}
+Пусть такие $a$ и $b$ найдутся. Тогда \vspace{-4mm}
+
+$$\frac{b}{a} = \sqrt{2},$$ \vspace{-6mm}
+
+что эквивалентно \vspace{-6mm}
+
+$$b^2 = 2a^2$$ \vspace{-9mm}
+
+\begin{itemize}
+\item $b^2$ должно делится на 2;
+\item \underline{$b$ делится на 2};
+\item найдётся такое $k$, что $b = 2k$;
+\end{itemize}
+\end{Prof}
+}
+
+\fram{}{
+\begin{Profcont}
+\begin{itemize}
+\item $b^2 = 4k^2 = 2a^2$;
+\item $a^2 = 2k^2$;
+\item $\ldots$;
+\item \underline{$a$ делится на 2};
+\item противоречие.
+\end{itemize}
+\end{Profcont}
+
+Значит, не существует таких целых $a$ и $b$, что $\frac{b}{a} = \sqrt{2}$.
+
+Значит, уравенеие $b^2 = 2a^2$ не имеет решений для целых $a$ и $b$.
+}
+
+
+\fram{Иллюстрация рациональности}{
+\ \vspace{-11mm}
+\begin{center}
+    \tikz[scale=0.43]{
+    \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
+    {
+        \foreach \y in {1,2,3,4,5,6,7,8,9,10,11,12}
+        {
+        \draw (\x, \y) circle (2pt);
+        }
+        \draw (\x,-0.1)--(\x,0.1) node[anchor=north] {\tiny \x};
+    }
+    \foreach \y in {1,2,3,4,5,6,7,8,9,10,11,12}
+    {
+        \draw (-0.1,\y)--(0.1,\y) node[anchor=east] {\tiny \y};
+    }
+    \draw[black, ->] (0,0)--(25,0);
+    \draw[black, ->] (0,0)--(0,13);
+    \draw (25,0) node[anchor=north] {$b$};
+    \draw (0,13) node[anchor=east] {$a$};
+    \draw[black] (0,0)--(13,13);
+    \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12}{
+    \filldraw (\x,\x) circle (2.5pt);}
+    \draw (13,13) node[anchor=south] {$\frac{b}{a} = 1$};
+    \draw[blue] (0,0)--(6.5,13);
+    \foreach \x in {1,2,3,4,5,6}{
+    \filldraw[blue] (\x,2*\x) circle (2.5pt);}
+    \draw[blue] (6.5,13) node[anchor=south] {$\frac{b}{a} = \frac{1}{2}$};
+    \draw[green] (0,0)--(22.45454545,13);
+    \filldraw[green] (19,11) circle (2.5pt);
+    \draw[green] (22.45454545,13) node[anchor=south] {$\frac{b}{a} = \frac{19}{11}$};
+    \draw[red] (0,0)--(18.3847763109,13);
+    \draw[red] (18.3847763109,13) node[anchor=south] {$\frac{b}{a} = \sqrt{2}$};
+%    \draw (0,74.25) node[anchor=west] {$\frac{b}{2}$};
+%    \draw (0,222.75) node[anchor=west] {$\frac{b}{2}$};
+    }
+  \end{center}
+}
+
+\section{Задачи}
+\fram{Задача 1}{
+\Large
+Может ли иррациональное число в иррациональной степени быть рациональным?
+}
+
+\fram{Решение 1}{
+Да, может.
+
+Рассмотрим число 
+
+$$\left(\sqrt{2}\right)^{\sqrt{2}}.$$
+
+Если оно рационально, то мы победили.
+
+Если нет, то возведём и его в степень $\sqrt{2}$:
+
+$$\left(\left(\sqrt{2}\right)^{\sqrt{2}}\right)^{\sqrt{2}} = \left(\sqrt{2}\right)^{\sqrt{2}\cdot\sqrt{2}} = \left(\sqrt{2}\right)^2 = 2.$$
+
+И теперь мы точно победили.
+}
+
+\fram{Задача 2}{
+\Large
+Генерал построил своё подразделения в форме квадрата? Может ли он перестроить это же подразделение в виде двух равных квадратов?
+}
+
+\section{Цепная дробь}
+\fram{Цепная дробь}{
+Рассмотрим дробь
+$$1+\frac{1}{2+\frac{1}{2+\frac{1}{2+\frac{1}{2+\ldots}}}} = x \qquad \Longleftrightarrow \qquad 2+\frac{1}{2+\frac{1}{2+\frac{1}{2+\frac{1}{2+\ldots}}}} = 1+x.$$
+
+Заменим знаменатель первой дроби на $x$:\vspace{-5mm}
+
+\begin{align*}
+    2 + \frac{1}{x+1} &= 1+x\\
+    \frac{1}{x+1} &= x-1\\
+    1 &= (x-1)(x+1)\\
+    1 &= x^2 - 1\\
+    x^2 &= 2\\
+    x &= \sqrt{2}.
+\end{align*}
+}
+
+\section{Приближенные значения}
+\fram{Приближенные значения $\sqrt{2}$}{
+Обрубая дробь с предыдущего слайда на том или ином этаже мы получим последовательность \textit{приближенных значений} $\sqrt{2}$:
+
+$$\frac{1}{1}, \quad \frac{3}{2}, \quad \frac{7}{5}, \quad \frac{17}{12}, \quad \frac{41}{29}, \ldots$$
+
+\begin{itemize}
+    \item Каждая следующая такая дробь приближает $\sqrt{2}$ всё лучше и лучше.
+    \item Если $\frac{p}{q}$ и $\frac{P}{Q}$ --- две последовательные дроби из ряда выше, то
+    $$P = p+2q, \qquad\qquad Q = p+q.$$
+\end{itemize}
+}
+
+\fram{}{
+\vspace{-10mm}
+\begin{Property}
+Для каждой дроби $\frac{P}{Q}$ из ряда выше выполнено: \vspace{-4mm}
+
+$$P^2 - 2Q^2 = \pm 1,$$ \vspace{-8mm}
+
+что экививалентно  \vspace{-6mm}
+
+$$P^2 = 2Q^2 \pm 1.$$ \vspace{-6mm}
+
+
+\end{Property}
+
+\begin{Prof}
+Пусть для дроби $\frac{p}{q}$ это выполнено, то есть $p^2 - 2q^2 = \pm 1$. 
+
+Рассмотрим следующую за $\frac{p}{q}$ дробь $\frac{P}{Q}$. Для неё верны соотношения $P = p+2q$ и $Q = p+q$. Тогда \vspace{-7mm}
+
+\begin{align*}
+    P^2 - 2Q^2 = (p+2q)^2 - 2(p+q)^2 =\\
+    p^2 + 4pq+4q^2 - 2p^2 - 4pq - 2q^2 =\\
+    2q^2 - p^2 = -(p^2-2q^2) = \mp 1.
+\end{align*} \vspace{-7mm}
+\end{Prof}
+}
+
+\fram{Опять задача}{
+Вернёмся к задаче о генерале и подразделениях. Изначальная задача имеет отрицательный ответ, т.к. для любых целых $a$ и $b$ $b^2 \neq 2a^2$.
+
+Но если взять $b = P$ и $a = Q$ из дробей выше, мы гарантированно можем добиться разницы между $b^2$ и $2a^2$ всего в одного солдата.\vspace{-4mm}
+
+\begin{center} \tikz[scale=0.15]
+{
+   \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17}
+   {
+    \foreach \y in {1,2,3,4,5,6,7,8}
+   {
+    \filldraw[fill opacity=0.6, red] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   }
+   }
+   \foreach \x in {1,2,3,4,5,6,7,8}
+   {
+    \filldraw[fill opacity=0.6, red] (\x, 9) rectangle (\x cm + 1 cm, 9 cm + 1 cm);
+   }
+   \foreach \x in {10,11,12,13,14,15,16,17}
+   {
+    \filldraw[fill opacity=0.6, blue] (\x, 9) rectangle (\x cm + 1 cm, 9 cm + 1 cm);
+   }
+   \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17}
+   {
+    \foreach \y in {10,11,12,13,14,15,16,17}
+   {
+    \filldraw[fill opacity=0.6, blue] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   }
+   }
+   \draw (20,9.3) node {\huge $\rightarrow$};
+   \foreach \x in {22,23,24,25,26,27,28,29,30,31,32,33}
+   {
+    \foreach \y in {-4,-3,-2,-1,0,1,2,3,4,5,6,7}
+   {
+    \filldraw[fill opacity=0.6, red] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   }
+   \foreach \y in {11,12,13,14,15,16,17,18,19,20,21,22}
+   {
+    \filldraw[fill opacity=0.6, blue] (\x, \y) rectangle (\x cm + 1 cm, \y cm + 1 cm);
+   }
+   }
+   \draw[fill opacity=0.6] (23, 9) rectangle (23 cm + 1 cm, 9 cm + 1 cm);
+}
+\end{center}
+
+}
+
+\section{ }
+\fram{}{
+\begin{center}
+    {\Large Спасибо за внимание!}
+    \vspace{0.5cm} \hrule \vspace{0.3cm}
+
+Что мы узнали сегодня:
+\begin{enumerate}
+	\item откуда взялось число $\sqrt{2}$ и почему оно иррационально;
+	\item что такое Теорема Аристотеля;
+	\item как цепные дроби приближают числа;
+	\item как почти разбить один квадрат на два равных.
+\end{enumerate} \vspace{0.3cm}
+
+    \hrule\vspace{0.5cm}
+    Задать вопрос автору:
+    \myref{mailto:todzhe@mail.ru}{todzhe@mail.ru}
+\end{center}
+}
+
+\fram{Собирай команду и вступай в бой!}{
+\Large
+\begin{center}
+	Зарегистрировать команду на Регату:\vspace{0.2cm}
+	
+	\qrcode[height=5cm]{https://forms.gle/WuuC2qttGcfETTUm8} \vspace{0.2cm}
+	
+	(отсканируйте или тыкните на QR-код)
+\end{center}
+}
+\end{document}
