@@ -1,0 +1,62 @@
+\documentclass[a4paper,17pt]{extarticle}
+\usepackage{tikz,fontspec,makecell,graphicx,qrcode}
+\usepackage[russian]{babel}
+\usepackage[top=1cm,bottom=0cm,outer=1.8cm,inner=1.8cm]{geometry}
+\parindent=0.6in \parskip=2.8mm
+
+\setmainfont[
+	Path = f/,
+	BoldFont=lb.ttf,
+	ItalicFont=li.ttf,
+	BoldItalicFont=lbi.ttf
+		]{l.ttf}
+\setsansfont[
+	Path = f/,
+	BoldFont=lb.ttf,
+	ItalicFont=li.ttf,
+	BoldItalicFont=lbi.ttf
+		]{l.ttf}
+
+\begin{document} \thispagestyle{empty}
+
+\begin{center} \begin{tabular}{ccc}
+	\makecell[c]{\includegraphics[height=3.5cm]{spbtym-loc}} &
+	\hspace{0.7cm} &
+	\makecell[c]{\includegraphics[height=1.75cm]{funds}}
+\end{tabular}
+
+\begin{tabular}{l}
+	\makecell[l]{{\large\bf С 22 по 28 марта мы приглашаем вас}\\
+		{\large\bf принять участие в математической Регате}\\
+		{\large\bf в рамках IX Санкт-Петербургского}\\
+		{\large\bf Турнира юных математиков}}
+\end{tabular}\end{center}
+
+Регата — это командное соревнование, в котором командам будет предложено решить 3 серии исследовательских задач. На решение каждой серии у команд есть 2 дня. Решения оформляются в электронном виде и отправляются членам жюри для проверки. По результатам трёх туров будут распределены места команд, присуждены специальные премии и выданы призы. 
+
+Особенности математической Регаты: \vspace{-7mm}
+\begin{itemize} \itemsep=0mm
+	\item[–] оригинальные исследовательские задачи;
+	\item[–] являются идеальной подготовкой к формату Турнира;
+	\item[–] решения проверяют авторы задач, что исключает ошибки в ходе проверки;
+	\item[–] задачи связаны с интересными разделами математики и могут служить началом небольшой научной работы;
+	\item[–] участие дистанционно, без привязки к конкретному месту и времени.
+\end{itemize} \vspace{-9mm}
+
+\begin{center}
+	Собирайте команду и вступайте в бой!\\ {\bf Регистрация до 15 марта}
+	\vspace{4mm}
+
+	\qrcode[hyperlink,height=3.4cm]{https://forms.gle/WuuC2qttGcfETTUm8}
+\end{center}
+
+\tikz[remember picture,overlay]{
+	\node[opacity=0.28,inner sep=0pt] at (current page.center)
+	{\includegraphics[width=\paperwidth,height=\paperheight]{spbtym-page}};
+%	\fill[white,opacity=0.7] (current page.center)
+%		++(-0.5 * \paperwidth,-0.5 * \paperheight)
+%		rectangle ++(\paperwidth,\paperheight);
+}
+\clearpage
+
+\end{document}
