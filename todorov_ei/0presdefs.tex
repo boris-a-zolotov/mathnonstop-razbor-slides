@@ -1,0 +1,74 @@
+\usepackage[utf8x]{inputenc} \usepackage[russian]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,caption,subcaption}
+\usepackage{hyperref,natbib}
+\usepackage{tikz,xcolor,colortbl,makecell}
+\usepackage{algorithm,algpseudocode}
+\usepackage{qrcode}
+
+\usetikzlibrary{arrows,backgrounds,patterns,%
+	matrix,shapes,fit,calc,shadows,plotmarks,snakes}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{problem}{Задача}
+
+\usetheme[height=0.97cm]{Rochester}
+\usecolortheme{dolphin}
+
+\definecolor{hard}{RGB}{145,55,55}
+\definecolor{mnsgold}{RGB}{240,235,220}
+
+\setbeamercolor{headline}{bg=hard,fg=mnsgold}
+\setbeamercolor*{frametitle}{parent=headline}
+
+\setbeamercolor{structure}{fg=hard}
+\setbeamercolor{subsection in head/foot}{bg=white,fg=hard}
+\setbeamercolor{section in head/foot}{bg=hard,fg=mnsgold}
+\setbeamercolor{block title}{bg=hard,fg=mnsgold}
+
+\setbeamertemplate{navigation symbols}{}
+
+\parskip=2.6mm
+\def\ll{\left(} \def\rr{\right)}
+\def\lag{\left\langle} \def\rag{\right\rangle}
+
+\definecolor{failpos}{RGB}{230,30,20}
+\definecolor{initpos}{RGB}{30,20,220}
+\definecolor{turna}{RGB}{100,240,110}
+\definecolor{turnb}{RGB}{250,140,110}
+
+\newcommand{\vseper}{\vphantom{$\int_{0_0}^{0^0}$}}
+
+\newcommand{\singlepayoff}[2]{\tikz{
+	\draw (0,0) node{\vseper #1}; \draw (0.8,0.8) node{\vseper #2};
+}}
+
+\newcommand{\rowdescription}[1]{\tikz{
+	\draw (0,0) node{\vseper #1}; \draw (0,0.8) node{\vseper};
+}}
+
+\newcommand{\coldescription}[1]{\tikz{
+	\draw (0,0) node{\vseper}; \draw (0.8,0) node{\vseper #1};
+}}
+
+\def\mitem{\medskip\item}
+\def\ps{\\ [0.65cm]} \linespread{1.16}
+\def\fram#1#2{\begin{frame}\frametitle{#1}#2\end{frame}}
+\def\usl#1#2{\begin{block}{#1} #2 \end{block} \medskip\pause}
+\def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
+
+\def\divsby{\mathrel{\rlap{.}\rlap{\raisebox{0.55ex}{.}}\raisebox{1.1ex}{.}}}
+\definecolor{starvert}{RGB}{110,175,230}
+\newcommand{\vfi}{\varphi}
+\newcommand{\litem}{\vspace{0.5cm}\item}
+
+\newcommand{\nkstar}[2]{
+	\foreach \i in {1,...,#1} {\draw[thick] (90 + 360 * \i / #1 : 3.5)
+		-- (90 + 360 * \i / #1 + 360 * #2 / #1 : 3.5);}
+	\foreach \i in {1,...,#1} {\fill[starvert] (90 + 360 * \i / #1 : 3.5) circle[radius=0.16cm];}
+}
