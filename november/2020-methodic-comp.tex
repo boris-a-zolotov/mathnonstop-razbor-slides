@@ -3,7 +3,7 @@
 
 \usepackage[utf8x]{inputenc}
 \usepackage[russian]{babel}
-\usepackage{hyperref}
+\usepackage{hyperref,qrcode}
 \usepackage{xcolor,wrapfig,sistyle}
 \usepackage{tikz,makecell}
 
@@ -28,8 +28,8 @@
 \def\ll{\left(} \def\rr{\right)}
 \def\ps{\\ [0.8cm]}
 
-\def\usl#1{\begin{block}{Условие} #1 \end{block} \medskip\pause}
-\def\uslx#1{\begin{block}{Условие} #1 \end{block}}
+\def\usl#1{\vspace{-6mm} \begin{block}{\vspace*{-3ex}} #1 \end{block} \medskip\pause}
+\def\uslx#1{\vspace{-6mm} \begin{block}{\vspace*{-3ex}} #1 \end{block}}
 \def\mov#1#2{\begin{scope}[xshift = #1 cm] #2 \end{scope};}
 
 \def\mitem{\medskip\item}
@@ -56,7 +56,16 @@
 \section[Приветствие]{Hello!}
 \begin{frame}\titlepage\end{frame}
 
-\section[Введение]{Quick Intro}
+\begin{frame} \frametitle{Эта презентация онлайн}
+\begin{center}
+\vspace{-10mm}
+Зачем фотографировать презентацию, когда её можно скачать?\vspace{4mm}
+
+		\qrcode[height=4.6cm]{https://github.com/boris-a-zolotov/mathnonstop-razbor-slides/blob/master/november/2020-methodic-comp.pdf}\vspace{4mm}
+		
+		\url{http://bit.ly/mns-siberia}
+\end{center}
+\end{frame}
 
 \input{fpg/fpg-slide}
 
@@ -187,6 +196,18 @@ $k=4$:
 
 \section[Конструкт]{Second principle /Constructive/}
 
+\begin{frame} \frametitle{Кирпичей требуют наши сердца}
+
+\usl{
+	Нарисуйте на клетчатой бумаге такую фигуру, которую
+	можно разделить по клеткам на 2, на 3, на 4, на 5, на 6
+	одинаковых по форме и размеру связных фигур~—
+	причём они не будут прямоугольниками.
+}
+
+\input{img/123456}
+\end{frame}
+
 \fram{Искусное владение числами}{
 \usl{
 	Придумайте (или расскажите, как построить) 95-значное число, в котором нет нулей и которое делится на свою сумму цифр.
@@ -220,18 +241,6 @@ $$\underbrace{.\ .\ .\ .\ .\ .\ .}_{\begin{minipage}{2cm}
 }
 } 
 \end{center}
-\end{frame}
-
-\begin{frame} \frametitle{Кирпичей требуют наши сердца}
-
-\usl{
-	Нарисуйте на клетчатой бумаге такую фигуру, которую
-	можно разделить по клеткам на 2, на 3, на 4, на 5, на 6
-	одинаковых по форме и размеру связных фигур~—
-	причём они не будут прямоугольниками.
-}
-
-\input{img/123456}
 \end{frame}
 
 
