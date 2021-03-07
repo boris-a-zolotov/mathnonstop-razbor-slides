@@ -1,0 +1,36 @@
+\newcommand{\staircs}{\filldraw[draw=black,fill=white,fill opacity=0.84]}
+\newcommand{\stairwd}{0.305}
+
+\newcommand{\flr}[1]{
+     \staircs (0, #1 cm)
+	-- ++(-0.5 * \stairwd cm, -1 * \stairwd cm) -- ++(5.8,0)
+	-- ++(0.5 * \stairwd cm, \stairwd cm) -- ++(1,2)
+	-- ++(0.5 * \stairwd cm, \stairwd cm) -- ++(-5.8,0)
+	-- cycle;
+}
+
+\newcommand{\stairst}[1]{ \begin{scope}[yshift = #1 cm]
+     \staircs (1,2)
+	-- ++(0.5 * \stairwd cm, \stairwd cm) -- ++(5.8,4)
+	-- ++(-1 * \stairwd cm, -2 * \stairwd cm) -- ++(-5.8,-4)
+	-- cycle;
+     \staircs (6.3,1)
+	-- ++(0.5 * \stairwd cm, \stairwd cm) -- ++(-5.8,4)
+	-- ++(-1 * \stairwd cm, -2 * \stairwd cm) -- ++(5.8,-4)
+	-- cycle;
+     \staircs (0,0)
+	-- ++(0.5 * \stairwd cm, \stairwd cm) -- ++(5.8,4)
+	-- ++(-1 * \stairwd cm, -2 * \stairwd cm) -- ++(-5.8,-4)
+	-- cycle;
+     \flr{4}
+\end{scope}}
+
+\tikz[scale=0.34]{
+	\flr{0} \stairst{0} \stairst{4}
+	\stairst{8} \stairst{12}
+	\draw[<->] (-0.5 * \stairwd cm, -0.9) -- (5.8 cm - 0.5 * \stairwd cm,-0.9);
+	\draw (2.9 cm - 0.5 * \stairwd cm, -0.9) node[below]{12\,м};
+	\draw[<->] (5.8 cm + 0.9 cm - 1 * \stairwd cm, -1 * \stairwd cm)
+	     -- (6.8 cm + 0.9 cm, 2 cm + \stairwd cm);
+	\draw (7.2 cm - 0.5 * \stairwd cm, 1 cm) node[right]{4\,м};
+}

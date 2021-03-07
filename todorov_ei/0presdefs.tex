@@ -4,8 +4,9 @@
 \usepackage{hyperref,natbib}
 \usepackage{tikz,xcolor,colortbl,makecell}
 \usepackage{algorithm,algpseudocode}
+\usepackage{qrcode}
 
-\usetikzlibrary{arrows,arrows.meta,backgrounds,patterns,%
+\usetikzlibrary{arrows,backgrounds,patterns,%
 	matrix,shapes,fit,calc,shadows,plotmarks,snakes}
 
 \theoremstyle{plain}
@@ -19,8 +20,8 @@
 \usetheme[height=0.97cm]{Rochester}
 \usecolortheme{dolphin}
 
-\definecolor{hard}{RGB}{20,100,65}
-\definecolor{mnsgold}{RGB}{240,255,250}
+\definecolor{hard}{RGB}{145,55,55}
+\definecolor{mnsgold}{RGB}{240,235,220}
 
 \setbeamercolor{headline}{bg=hard,fg=mnsgold}
 \setbeamercolor*{frametitle}{parent=headline}
@@ -54,6 +55,8 @@
 \newcommand{\coldescription}[1]{\tikz{
 	\draw (0,0) node{\vseper}; \draw (0.8,0) node{\vseper #1};
 }}
+
+\newcommand{\myref}[2]{\href{#1}{\texttt{\underline{#2}}}}
 
 \def\mitem{\medskip\item}
 \def\ps{\\ [0.65cm]} \linespread{1.16}
