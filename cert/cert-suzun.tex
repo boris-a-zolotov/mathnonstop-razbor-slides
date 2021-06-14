@@ -1,0 +1,39 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage{tikz,amsmath,graphicx,sistyle,xcolor}
+\usepackage[a4paper,landscape,margin=-2mm]{geometry}
+
+\input{f/input}
+\begin{document}
+\pagestyle{empty}
+
+\input{vertgrid}
+
+\definecolor{origtitle}{RGB}{0,136,214}
+
+\newcommand\cert[5]
+{\begin{center} \tikz{
+	\draw (0,0) node{
+		\includegraphics[width=29cm]{old/mns-maket-2020-grat}
+	};
+	\fill[white] (-7,3.5) rectangle (7,5.2);
+	\draw (0, 4.45) node{\Huge\textcolor{origtitle}{Сертификат участника}};
+	\draw (0,2.65) node{\Huge\bfseries #1};
+	\draw (0,1.4) node{\large МКОУ «Сузунская СОШ №301 им.\,В.\,А.\,Левина», #2 класс};
+	\draw (0,0.5) node{\large принимал#3 участие в олимпиаде};
+	\draw (0,-0.4) node{\large {\bfseries «Математика НОН-СТОП — 2021»} с результатом};
+	\draw (0,-1.55) node{\itshape\Large #4 баллов, #5 место};
+	\draw (0,-2.7) node{\large Желаем Вам высоких наград};
+	\draw (0,-3.6) node{\large и ждём в следующем году};
+	\draw (0,-4.6) node{\Large\bfseries Успехов!};
+%\vertgrid;
+} \end{center} \vfill\eject}
+
+\cert{Баталова Маргарита Михайловна}{5}{а}{0}{418}
+\cert{Тарасенко Анастасия Романовна}{5}{а}{1}{395}
+\cert{Муха Назар Александрович}{6}{}{3}{371}
+\cert{Симоненко Матвей Петрович}{8}{}{0}{259}
+\cert{Науршин Александр Евгеньевич}{8}{}{6}{200}
+\cert{Блинова Анастасия Романовна}{8}{а}{3}{232}
+
+\end{document}
