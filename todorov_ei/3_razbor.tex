@@ -256,15 +256,17 @@
 \end{enumerate}
 \end{frame}
 
-\begin{frame}\frametitle{}
-\usl{2021-7-9A}{
+\begin{frame}\frametitle{Бинарные операции}
+\ \\ \usl{2021-7-9A}{
 Определим операцию $\star$ для положительных чисел $a$ и $b$ следующим образом: $a\star b=\frac{ab}{a+b}$.\\
 Докажите, что $(a\star b)\star c=a\star (b\star c)$.
 }
 \usl{2021-7-9A}{
 Посчитайте $1\star\left(2\star\left(4\star\left(\ldots\star\left(256\star(512\star1024)\right)\ldots\right)\right)\right)$.
 }
-Перерасставим скобки: $$(\ldots((1\star2)\star4)\star\ldots)\star1024 = \left(\ldots\left(\frac{2}{3}\star4\right)\star\ldots\right)\star1024 = \left(\ldots\frac{4}{7}\star\ldots\right)\star1024 = \frac{1024}{2047}.$$
+Перерасставим скобки:
+	\[ (\ldots((1\star2)\star4)\star\ldots)\star1024 = \left(\ldots\left(\frac{2}{3}\star4\right)\star\ldots\right)\star1024 \]
+	\[ \left(\ldots\frac{4}{7}\star\ldots\right)\star1024 = \frac{1024}{2047}.\]
 \end{frame}
 
 %%%%%% Профиль
