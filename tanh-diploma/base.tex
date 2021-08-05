@@ -59,6 +59,14 @@
 \node[inner sep=0pt] at (0,12.3) {\includegraphics[height=4.4cm]{spbtym-loc}};
 \node[inner sep=0pt] at (0,-12.3) {\includegraphics[height=2.45cm]{funds}};
 
+	\foreach \c in {-11,...,11} {
+	   \draw[opacity=0.65] (-5.4,\c cm) node[left]{\c} -- (-5,\c cm);
+	   \foreach \t in {1,...,9} {\draw[opacity=0.65]
+	   	(-5.325,\c + 0.1 * \t) -- (-5.075,\c + 0.1 * \t);}
+	}
+
+\node at (0,9.2) {\large\bf Летний Санкт-Петербургский}; %% ПИСАТЬ ЗДЕСЬ
+
 \end{tikzpicture} \end{center} \vspace{-2cm}
 
 \tikz[remember picture,overlay]{
