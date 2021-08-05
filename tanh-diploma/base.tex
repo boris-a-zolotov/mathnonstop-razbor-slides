@@ -7,35 +7,60 @@
 
 \usepackage[margin=0.5mm]{geometry}
 
-\usepackage{amsmath}
-\usepackage{tikz} \usetikzlibrary{}
+\usepackage{amsmath,graphicx,xcolor,tikz}
+
+\definecolor{stym}{RGB}{29,53,133}
 
 \begin{document}
 
-\newcommand{\xplotstretch}{0.14} % width of the plot, smaller=better
-\newcommand{\yplotstretch}{10} % height of the plot, greater=more jumps
-\newcommand{\yplotscale}{1.2} % scale, overall height
+\newcommand{\xplotstretch}{0.108} % smaller=wider
+\newcommand{\yplotstretch}{13} % greater=more jumps
+\newcommand{\yplotscale}{2} % overall height
+\newcommand{\cyps}{1.8}
 
 \begin{center} \begin{tikzpicture}[declare function={%
 	drob(\x) = Mod(\x,1);%
 	arctanh(\x) = 0.5*(ln(1+\x)-ln(1-\x));%
-	stanh(\x) = \yplotscale * drob(\yplotstretch*tanh(\xplotstretch*\x));%
+	stanh(\x) = \yplotscale * drob(\yplotstretch * tanh(\xplotstretch * \x));%
 	invtanh(\x) = arctanh(\x / \yplotstretch) / \xplotstretch;%
 	linvtanh(\x) = max(invtanh(\x),-14.77);%
-	rinvtanh(\x) = min(invtanh(\x),14.77);}]
+	rinvtanh(\x) = min(invtanh(\x),14.77);%
+	scos(\x) = -4 * cos(180 / 10.25 * \x);%
+	invcos(\x) = 10.25 / 180 * acos(-\x / 4);}]
 
-\newcommand{\straighttan}
+\newcommand{\ddomain}[1]{
+	\draw[domain=#1, samples=10, variable=\x,%
+	stym, smooth, line width=0.9mm,line cap=round]}
 
-\fill[white] (-10.25,-14.77) rectangle (10.25,14.77); % основной прямоугольник
+\newcommand{\plx}[1]{plot ({\x},{#1})}
 
-\begin{scope}[xshift=-8cm,rotate=90]
-\foreach \t in {-10,...,9} {
-\draw[domain=linvtanh(\t+0.05):rinvtanh(\t+0.95), samples=60, variable=\x, blue, thick]
-	plot ({\x},{stanh(\x)});
-}
+\fill[white,opacity=0.04] (-10.25,-14.77) rectangle (10.25,14.77);
+
+\begin{scope}[xshift=-8.3cm,rotate=90]
+   \foreach \t in {-12,...,11} {
+	\ddomain{linvtanh(\t+0.04):rinvtanh(\t+0.96)} \plx{stanh(\x)};
+   }
 \end{scope}
 
+\begin{scope}[xshift=10.45cm,rotate=90,xscale=-1]
+   \foreach \t in {-12,...,11} {
+	\ddomain{linvtanh(\t+0.04):rinvtanh(\t+0.96)} \plx{stanh(\x)};
+   }
+\end{scope}
 
-\end{tikzpicture} \end{center}
+\begin{scope}[yshift=12.87cm,xshift=0.07cm]
+   \foreach \t in {-4,...,3} {
+	\ddomain{invcos(\t)+0.02:invcos(\t+1)-0.02} \plx{\cyps * drob(scos(\x))};
+	\ddomain{-invcos(\t)-0.02:-invcos(\t+1)+0.02} \plx{\cyps * drob(scos(\x))};
+   }
+\end{scope}
+
+\end{tikzpicture} \end{center} \vspace{-2cm}
+
+\tikz[remember picture,overlay]{
+	\node[opacity=0.38,inner sep=0pt] at (current page.center)
+	{\includegraphics[width=\paperwidth,height=\paperheight]{spbtym-page}};
+}
+\clearpage
 
 \end{document}
