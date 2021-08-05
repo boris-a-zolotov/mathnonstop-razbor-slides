@@ -12,14 +12,29 @@
 
 \begin{document}
 
-\begin{center} \begin{tikzpicture}[declare function={drob(\x) = Mod(\x,1);}]
+\newcommand{\xplotstretch}{0.14} % width of the plot, smaller=better
+\newcommand{\yplotstretch}{10} % height of the plot, greater=more jumps
+\newcommand{\yplotscale}{1.2} % scale, overall height
+
+\begin{center} \begin{tikzpicture}[declare function={%
+	drob(\x) = Mod(\x,1);%
+	arctanh(\x) = 0.5*(ln(1+\x)-ln(1-\x));%
+	stanh(\x) = \yplotscale * drob(\yplotstretch*tanh(\xplotstretch*\x));%
+	invtanh(\x) = arctanh(\x / \yplotstretch) / \xplotstretch;%
+	linvtanh(\x) = max(invtanh(\x),-14.77);%
+	rinvtanh(\x) = min(invtanh(\x),14.77);}]
+
+\newcommand{\straighttan}
 
 \fill[white] (-10.25,-14.77) rectangle (10.25,14.77); % основной прямоугольник
 
 \begin{scope}[xshift=-8cm,rotate=90]
-\draw[domain=-14.77:14.77, samples=800, variable=\x, blue, thick]
-	plot ({\x},{1.2*drob(10*tanh(0.14*\x))});
+\foreach \t in {-10,...,9} {
+\draw[domain=linvtanh(\t+0.05):rinvtanh(\t+0.95), samples=60, variable=\x, blue, thick]
+	plot ({\x},{stanh(\x)});
+}
 \end{scope}
+
 
 \end{tikzpicture} \end{center}
 
