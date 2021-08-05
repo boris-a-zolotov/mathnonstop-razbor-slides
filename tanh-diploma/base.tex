@@ -1,0 +1,26 @@
+\documentclass[a4paper,17pt]{extarticle} \pagestyle{empty}
+
+\usepackage{extsizes}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage[margin=0.5mm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{tikz} \usetikzlibrary{}
+
+\begin{document}
+
+\begin{center} \begin{tikzpicture}[declare function={drob(\x) = Mod(\x,1);}]
+
+\fill[white] (-10.25,-14.77) rectangle (10.25,14.77); % основной прямоугольник
+
+\begin{scope}[xshift=-8cm,rotate=90]
+\draw[domain=-14.77:14.77, samples=800, variable=\x, blue, thick]
+	plot ({\x},{1.2*drob(10*tanh(0.14*\x))});
+\end{scope}
+
+\end{tikzpicture} \end{center}
+
+\end{document}
