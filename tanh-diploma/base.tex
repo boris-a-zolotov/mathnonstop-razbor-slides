@@ -14,7 +14,7 @@
 \begin{document}
 
 \newcommand{\xplotstretch}{0.159} % smaller=wider
-\newcommand{\yplotstretch}{26.6} % greater=more jumps
+\newcommand{\yplotstretch}{26.5} % greater=more jumps
 \newcommand{\yplotscale}{2.15} % overall height
 \newcommand{\cyps}{1.95}
 
@@ -49,7 +49,7 @@
 \end{scope}
 
 \begin{scope}[yshift=12.8cm,xscale=1.06]
-   \foreach \t in {-10,...,9} {
+   \foreach \t in {-9,...,8} {
 	\ddomain{invcos(\t)+0.02:invcos(\t+1)-0.02} \plx{\cyps * drob(scos(\x))};
 	\ddomain{-invcos(\t)-0.02:-invcos(\t+1)+0.02} \plx{\cyps * drob(scos(\x))};
    }
