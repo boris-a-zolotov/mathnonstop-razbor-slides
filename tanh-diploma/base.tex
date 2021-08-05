@@ -34,7 +34,7 @@
 
 \newcommand{\plx}[1]{plot ({\x},{#1})}
 
-\fill[white,opacity=0.04] (-10.25,-14.77) rectangle (10.25,14.77);
+\fill[white,opacity=0.06] (-10.25,-14.77) rectangle (10.25,14.77);
 
 \begin{scope}[xshift=-8.3cm,rotate=90]
    \foreach \t in {-12,...,11} {
@@ -55,10 +55,14 @@
    }
 \end{scope}
 
+\fill[white] (0,12.3) circle[radius=2.18cm];  % Логотипы
+\node[inner sep=0pt] at (0,12.3) {\includegraphics[height=4.4cm]{spbtym-loc}};
+\node[inner sep=0pt] at (0,-12.3) {\includegraphics[height=2.45cm]{funds}};
+
 \end{tikzpicture} \end{center} \vspace{-2cm}
 
 \tikz[remember picture,overlay]{
-	\node[opacity=0.38,inner sep=0pt] at (current page.center)
+	\node[opacity=0.35,inner sep=0pt] at (current page.center)
 	{\includegraphics[width=\paperwidth,height=\paperheight]{spbtym-page}};
 }
 \clearpage
