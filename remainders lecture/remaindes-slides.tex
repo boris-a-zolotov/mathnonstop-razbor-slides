@@ -3,7 +3,7 @@
 \usepackage{extsizes}
 
 \usepackage[paperheight=9.6cm,paperwidth=17cm,margin=0.7cm]{geometry}
-\parindent=0mm \parskip=2.5mm
+\parindent=0mm \parskip=3.2mm
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx,xcolor,tikz}
@@ -16,12 +16,35 @@
 
 \input{f/mspec}
 
+\def\divsby{\mathop{\rlap{.}\rlap{\raisebox{0.55ex}{.}}\raisebox{1.1ex}{.}}}
 \renewcommand{\alpha}{α}
+\newcommand{\tr}[1]{\textcolor{red}{#1}}
 
 \begin{document}
 
-Квик браун фокс $xD^2 \cdot \alpha$
+\ \\ [1cm]
 
-Очередной шрифт без засечек
+\begin{center} \Large Циклы остатков \end{center}
+
+\newpage
+
+Рассмотрим задачу: найти последнюю цифру числа
+	\[ 2^{124} \]
+
+Посмотрим на первые степени двойки.
+
+\begin{center}
+	\tr{2}\quad\tr{4}\quad\tr{8}\quad1\tr{6}\quad3\tr{2}\quad6\tr{4}\quad12\tr{8}\quad25\tr{6}
+\end{center}
+
+\newpage
+
+Каждая четвёртая степень двойки \\ заканчивается на 6.
+
+В свою очередь, $124 \divsby 4$, поэтому \\ $2^{124}$ заканчивается на 6. \bigskip
+
+Цель нашей лекции — понять, \medskip \\
+1) Почему остатки «зацикливаются» \\ и всегда ли так происходит; \medskip \\
+2) Какую длину имеет цикл.
 
 \end{document}
