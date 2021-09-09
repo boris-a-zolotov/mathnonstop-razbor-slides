@@ -1,0 +1,53 @@
+\documentclass[17pt]{extarticle}
+
+\usepackage{extsizes}
+
+\usepackage[paperheight=9.6cm,paperwidth=17cm,margin=0.7cm]{geometry}
+\parindent=0mm \parskip=3.2mm
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx,xcolor,tikz}
+\usepackage{enumerate,enumitem}
+
+\setlist{leftmargin=*}
+\usepackage[russian]{babel}
+
+\definecolor{fon}{HTML}{2f3642}
+
+\pagecolor{fon}
+\color{white}
+
+\input{f/mspec}
+
+\DeclarePairedDelimiter\lr{(}{)}
+\newcommand{\divsby}{\mathrel{\rlap{.}\rlap{\raisebox{0.55ex}{.}}\raisebox{1.1ex}{.}}}
+\renewcommand{\alpha}{α}
+\newcommand{\euler}{φ}
+\newcommand{\newslide}[1]{\newpage \begin{center} \large #1 \end{center}}
+\newcommand{\tr}[1]{\textcolor{red}{#1}}
+\newcommand{\vnode}{node[circle,fill=white,fill opacity=1,inner sep=0pt,minimum size=1.7mm]{}}
+
+\begin{document}
+
+\ \\ [1cm]
+
+\begin{center} \Large «Математика НОН-СТОП»:\medskip \\ 2021 И 2022 \end{center}
+
+\newslide{Олимпиада проводится при поддержке}
+
+\begin{center}
+	\includegraphics[height=2.6cm]{fig/fpg}\quad
+	\includegraphics[height=2.2cm]{fig/vn}
+\end{center}
+
+\input{p/lectures}
+
+\newpage \begin{center} \Large Спасибо за внимание! \end{center}
+
+\begin{itemize}
+	\item Темы лекций для школьников
+	\item Основные результаты, возможные развития
+	\item Разборы задач, математические игры
+\end{itemize}
+
+\end{document}
