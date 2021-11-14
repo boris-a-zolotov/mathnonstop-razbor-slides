@@ -1,0 +1,202 @@
+\documentclass[17pt]{extarticle}
+
+\usepackage{extsizes}
+
+\usepackage[paperheight=9.6cm,paperwidth=17cm,margin=0.8cm]{geometry}
+\parindent=0mm \parskip=3.2mm
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx,xcolor,tikz}
+\usepackage{enumerate,enumitem}
+
+\setlist{leftmargin=*}
+\usepackage[russian]{babel}
+
+\definecolor{fon}{HTML}{0f1622} % {2f3642}
+
+\pagecolor{fon}
+\color{white}
+
+\input{f/mspec}
+
+\DeclarePairedDelimiter\lr{(}{)}
+\newcommand{\divsby}{\mathrel{\rlap{.}\rlap{\raisebox{0.55ex}{.}}\raisebox{1.1ex}{.}}}
+\newcommand{\newslide}[1]{\newpage \begin{center} \large #1 \end{center}}
+\newcommand{\tr}[1]{\textcolor{red}{#1}}
+
+\newcommand{\ver}{\ensuremath{\text{В}}}
+\newcommand{\edg}{\ensuremath{\text{Р}}}
+\newcommand{\che}{\text{чёт.}}
+\newcommand{\nech}{\text{неч.}}
+
+\newcommand{\plcnode}[2]{\draw (#1) node[circle,fill=white,inner sep=0.6mm](#2){ };}
+
+\newcommand{\oneify}[1]{
+	\draw #1
+	node[pos=0.22,circle,fill=fon,
+		opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}}
+	node[pos=0.78,circle,fill=fon,
+		opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}};
+}
+
+\begin{document}
+
+\ \\ [1cm]
+
+\begin{center} {\Large Теория делимости} \bigskip \\
+	{\large Е. И. Тодоров, Санкт-Петербургский Турнир юных математиков} \end{center}
+
+\newslide{Чётность. Свойства}
+
+\begin{itemize}\itemsep = 0mm
+	\item Сложение: $\che + \che = \che$, $\nech+\nech = \che$,\\ $\che + \nech = \nech$.
+	\item Умножение: $\che\cdot\che = \che$, $\che\cdot\nech = \che$,\\ $\nech\cdot\nech = \nech$.
+	\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\che} = \che$.
+	\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\nech} = \nech$.
+\end{itemize}
+
+\newslide{Доказательство} %\vspace{-12mm}
+
+$\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\che} =$\\
+=$(\nech+\nech)+(\nech+\ldots+(\nech+\nech)=$\\
+$= \che+\che+\ldots+\che = \che$.
+
+$\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\nech} =$\\
+=$(\nech+\nech)+(\nech+\ldots+\nech)+\nech=$\\
+$= \che+\che+\ldots+\che+\nech = \nech$.
+
+\newslide{Чётность. Задача 1}
+
+Сумма пяти натуральных чисел равняется $200$. Может ли их произведение оканчиваться на $1999$?
+
+\newslide{Решение}
+
+\begin{itemize}
+\item Если число оканчивается на $1999$, то оно нечётное.
+\item Произведение чисел нечётно только тогда, когда каждое число нечётно.
+\item Сумма пяти нечётных чисел нечётна, а 200 --- чётное число. Беда.
+\end{itemize}
+
+\newslide{Чётность. Задача 2}
+
+Произведение трёх натуральных чисел оканчивается на 20. Может ли их сумма быть равна 19?
+
+\newslide{Решение}
+
+Подойдут числа $2$, $5$ и $12$: $2+5+12 = 19$ и $2\cdot5\cdot12 = 120$.
+
+\newslide{Чётность. Задача 3}
+
+Нескольким друзьям родители дают по конфете каждый раз, когда они получают или дарят подарок. Друзья целый месяц дарили подарки только друг другу. После этого они ссыпали все конфеты в один мешок, и так оказалась 221 конфета. Докажите, что кто-то из друзей ссыпал не все свои конфеты.
+
+\newslide{Решение}
+
+\begin{itemize}
+\item Каждый раз при дарении по конфете получает и дарующий, и принимающий.
+\item Значит, общее количество конфет у детей в два раза больше числа дарений.
+\item Значит, общее количество долно быть чётным, а 221 нечётное. Беда.
+\end{itemize}
+
+\newslide{Делимость}
+
+Целое число $a$ делится на целое число $b$ тогда и только тогда, когда существует целое число $k$ такое, что $a = k\cdot b$. Договоримся в этом случае писать $a \divsby b$.
+
+\newslide{Делимость. Свойства}
+
+\begin{itemize}
+\item Для любого целого $a$ верно $a \divsby 1$.
+\item Для любого целого $b$ верно $0 \divsby b$.
+\item Для любых целых $a$, $b$ и $c$ если $a \divsby b$ и $b \divsby c$, то $a \divsby c$.
+\end{itemize}
+
+\newslide{Доказательство}\vspace{-7mm}
+
+\begin{itemize}\itemsep=0mm
+\item  $b \divsby c$, значит, существует целое число $n$ такое, что $b = n\cdot c$;
+\item  $a \divsby b$, значит, существует целое число $m$ такое, что $a = m\cdot b$;
+\item тогда $a = m\cdot(n\cdot c) =  (m\cdot n)\cdot c$;
+\item но $l = m\cdot n$ --- целое число;
+\item тогда $a = l\cdot c$, то есть $a \divsby c$. Победа.
+\end{itemize}
+
+\newslide{Делимость. Ещё свойства}
+\begin{itemize}
+\item Если $a \divsby b$, то для любого целого $k$ верно $ka \divsby b$.
+\item Для любых целых $a$ и $c$, если $a \divsby b$ и $c \divsby b$, то $(a + c) \divsby b$.
+\item Для любых целых $a$ и $c$, если $a \divsby b$ и $c \divsby b$, то $(a - c) \divsby b$.
+\end{itemize}
+
+\newslide{Доказательство}\vspace{-7mm}
+
+\begin{itemize}\itemsep=0mm
+\item  $a \divsby b$, значит, существует целое число $n$ такое, что $a = n\cdot b$;
+\item  $c \divsby b$, значит, существует целое число $m$ такое, что $c = m\cdot b$;
+\item тогда $a+с = n\cdot b + a = m\cdot b = (n+m)\cdot b$;
+\item но $l =n+m$ --- целое число;
+\item тогда $a+c = l\cdot b$, то есть $(a+c) \divsby b$. Победа.
+\end{itemize}
+
+\newslide{Делимость. Задача 4}
+
+Придумайте число, которое оканчивается на 13, делится на 13 и имеет сумму цифр 13.
+
+\newslide{Решение}\vspace{-10mm}
+
+\begin{itemize}\itemsep=-1mm
+\item $1+3 = 4$. Остаётся набрать сумму цифр 9.
+\item Будем перебирать числа, делящиеся на 13, и смотреть на сумму цифр:\vspace{-1mm}
+\begin{align*}
+13 \to 4 && 26\to 8 && 39 \to 12 && 52 \to 7\\
+65 \to 11 && 78 \to 15 && 91 \to 10 && 104 \to 5\\
+117 \to 9.
+\end{align*}\vspace{-9mm}
+\item Число $11713 = 11700 + 13 = 900\cdot13 + 13 = 901\cdot13$ --- точно делится на $13$. Победа.
+\end{itemize}
+
+\newslide{Признаки делимости на 2 и 5}\vspace{-7mm}
+
+\begin{itemize}\itemsep=0mm
+\item Число делится на $2$, если последняя цифра делится на $2$.
+\item Число делится на $5$, если последняя цифра делится на $5$.
+\item Число делится на $2^n$, если число, составленное из последних $n$ цифр, делится на $2$.
+\item Число делится на $5^n$, если число, составленное из последних $n$ цифр, делится на $5$.
+\end{itemize}
+
+\newslide{Доказательство}\vspace{-7mm}
+
+\begin{itemize}\itemsep=0mm
+\item Рассмотрим число $N = \overline{a_1a_2\ldots a_k\underbrace{b_1b_2\ldots b_n}_{n \text{ цифр}}}$.
+\item $N = \overline{a_1a_2\ldots a_k\underbrace{00\ldots 0}_{n \text{ нулей}}} + \overline{b_1b_2\ldots b_n}$.
+\item $N = \overline{a_1a_2\ldots a_k}\cdot10^n + \overline{b_1b_2\ldots b_n}$.
+\item Первое слагаемое точно делится на $2^n$. Если второе делится, то и $N$ должно. И наоборот.
+\end{itemize}
+
+\newslide{Признаки делимости 3 и 9}
+
+\begin{itemize}
+\item Число делится на $3$ Тогда и только тогда, когда сумма его цифр делится на $3$.
+\item Число делится на $9$ Тогда и только тогда, когда сумма его цифр делится на $9$.
+\end{itemize}
+
+\newslide{Доказательство}
+
+\begin{itemize}
+\item Рассмотрим число $\overline{abc}$.
+\item Рассмотрим разность $\overline{abc} - (a+b+c) = 100\cdot a + 10\cdot b + c - a-b-c = 99\cdot a + 9\cdot b$.
+\item Разность числа и его суммы цифр точно делится на $9$. Значит, если число $\overline{abc}$ делилось на $9$, то и его сумма цифр должна делиться. И наоборот.
+\end{itemize}
+
+\newslide{Признаки делимости 11 и 7}
+
+\begin{itemize}
+\item Число делится на $3$ Тогда и только тогда, когда сумма его цифр делится на $3$.
+\item Число делится на $9$ Тогда и только тогда, когда сумма его цифр делится на $9$.
+\end{itemize}
+
+\newslide{}
+
+\begin{itemize}
+\item .
+\end{itemize}
+
+\end{document}

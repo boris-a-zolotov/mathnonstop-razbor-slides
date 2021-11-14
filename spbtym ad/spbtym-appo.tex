@@ -1,0 +1,64 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage{tikz,fontspec,makecell,graphicx,qrcode,hyperref}
+\usepackage[russian]{babel}
+\usepackage[top=0.5cm,bottom=0cm,outer=1cm,inner=1cm]{geometry}
+\parindent=0.6in \parskip=2.8mm
+
+\setmainfont[
+	Path = f/,
+	BoldFont=lb.ttf,
+	ItalicFont=li.ttf,
+	BoldItalicFont=lbi.ttf
+		]{l.ttf}
+\setsansfont[
+	Path = f/,
+	BoldFont=lb.ttf,
+	ItalicFont=li.ttf,
+	BoldItalicFont=lbi.ttf
+		]{l.ttf}
+
+\begin{document} \thispagestyle{empty}
+
+\begin{center} \begin{tabular}{ccc}
+	\makecell[c]{\includegraphics[height=3.5cm]{spbtym-loc}} &
+	\hspace{8cm} &
+	\makecell[c]{\includegraphics[height=2.5cm]{time_for_science-02}}
+\end{tabular}
+
+\begin{tabular}{l}
+	\makecell[l]{{\large\bf С 31 октября по 7 ноября в рамках}\\
+		{\large\bf IV Санкт-Петербургского Турнира}\\
+		{\large\bf юных математиков для 5-8 классов}\\
+		{\large\bf пройдёт Математическая регата}}
+\end{tabular}\end{center}
+
+Регата — это командное соревнование, в котором командам будет предложено решить 3 серии исследовательских задач. На решение каждой серии у команд есть 2 дня. Решения оформляются в электронном виде и отправляются членам жюри для проверки. По результатам трёх туров будут распределены места команд, присуждены специальные премии и выданы призы. 
+
+Задания Математической регаты позволят ученикам открыть для себя новые грани математики, исследовать нестандартные задачи. Являясь интересными сами по себе, они также могут служить идеальным переходом от школьных и олимпиадных задачек к формату задач Турнира, которые в дальнейшем смогут превратиться в полноценные научные исследования. Решение и оформление подобных задач поможет детям сформировать и развить навыки работы с информацией, умение нестандартно мыслить, позволит отточить искусство изложения и оформления своих рассуждений.
+
+Проверять решения участников будут непосредственно составители задач, что практически исключает возможные ошибки при оценивании. Кроме того, после каждого из туров регаты авторы задач будут давать небольшие методические комментарии по своим задачам, рассказывать о возможных направлениях дальнейших исследований по ним. 
+
+Регата проходит в полностью дистанционной форме, поэтому участие в ней могут принять участие команды, собранные из детей из разных школ или городов.\vspace{-2mm}
+
+\begin{center}
+	{\bf Регистрация открыта до 27 октября}
+	\vspace{2mm}
+
+	\qrcode[hyperlink,height=3.4cm]{https://rs.spbtym.ru/}
+	\vspace{2mm}
+	
+	{\bf\url{https://rs.spbtym.ru/}}
+\end{center}
+
+сайт: {\bf\url{spbtym.ru}} \hfill e-mail: {\bf\url{mail@spbtym.ru}}
+
+\tikz[remember picture,overlay]{
+	\node[opacity=0.28,inner sep=0pt] at (current page.center)
+	{\includegraphics[width=\paperwidth,height=\paperheight]{spbtym-page}};
+%	\fill[white,opacity=0.7] (current page.center)
+%		++(-0.5 * \paperwidth,-0.5 * \paperheight)
+%		rectangle ++(\paperwidth,\paperheight);
+}
+\clearpage
+
+\end{document}
