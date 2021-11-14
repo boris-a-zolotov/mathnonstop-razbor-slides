@@ -8,6 +8,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{graphicx,xcolor,tikz}
 \usepackage{enumerate,enumitem}
+\usepackage{hyperref}
 
 \setlist{leftmargin=*}
 \usepackage[russian]{babel}
@@ -28,15 +29,16 @@
 \newcommand{\edg}{\ensuremath{\text{Р}}}
 \newcommand{\che}{\text{чёт.}}
 \newcommand{\nech}{\text{неч.}}
+\newcommand{\lb}{\linebreak}
 
 \newcommand{\plcnode}[2]{\draw (#1) node[circle,fill=white,inner sep=0.6mm](#2){ };}
 
 \newcommand{\oneify}[1]{
-	\draw #1
-	node[pos=0.22,circle,fill=fon,
-		opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}}
-	node[pos=0.78,circle,fill=fon,
-		opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}};
+\draw #1
+node[pos=0.22,circle,fill=fon,
+opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}}
+node[pos=0.78,circle,fill=fon,
+opacity=0.94,inner sep=0.8mm]{{\footnotesize 1}};
 }
 
 \begin{document}
@@ -44,15 +46,15 @@
 \ \\ [1cm]
 
 \begin{center} {\Large Теория делимости} \bigskip \\
-	{\large Е. И. Тодоров, Санкт-Петербургский Турнир юных математиков} \end{center}
+{\large Е. И. Тодоров, Санкт-Петербургский Турнир юных математиков} \end{center}
 
 \newslide{Чётность. Свойства}
 
 \begin{itemize}\itemsep = 0mm
-	\item Сложение: $\che + \che = \che$, $\nech+\nech = \che$,\\ $\che + \nech = \nech$.
-	\item Умножение: $\che\cdot\che = \che$, $\che\cdot\nech = \che$,\\ $\nech\cdot\nech = \nech$.
-	\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\che} = \che$.
-	\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\nech} = \nech$.
+\item Сложение: $\che + \che = \che$, $\nech+\nech = \che$,\lb $\che + \nech = \nech$.
+\item Умножение: $\che\cdot\che = \che$, $\che\cdot\nech = \che$,\lb $\nech\cdot\nech = \nech$.
+\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\che} = \che$.
+\item $\underbrace{\nech+\nech+\nech+\ldots+\nech+\nech}_{\nech} = \nech$.
 \end{itemize}
 
 \newslide{Доказательство} %\vspace{-12mm}
@@ -94,7 +96,7 @@ $= \che+\che+\ldots+\che+\nech = \nech$.
 \begin{itemize}
 \item Каждый раз при дарении по конфете получает и дарующий, и принимающий.
 \item Значит, общее количество конфет у детей в два раза больше числа дарений.
-\item Значит, общее количество долно быть чётным, а 221 нечётное. Беда.
+\item Значит, общее количество должно быть чётным, а 221 нечётное. Беда.
 \end{itemize}
 
 \newslide{Делимость}
@@ -112,9 +114,9 @@ $= \che+\che+\ldots+\che+\nech = \nech$.
 \newslide{Доказательство}\vspace{-7mm}
 
 \begin{itemize}\itemsep=0mm
-\item  $b \divsby c$, значит, существует целое число $n$ такое, что $b = n\cdot c$;
-\item  $a \divsby b$, значит, существует целое число $m$ такое, что $a = m\cdot b$;
-\item тогда $a = m\cdot(n\cdot c) =  (m\cdot n)\cdot c$;
+\item $b \divsby c$, значит, существует целое число $n$ такое, что $b = n\cdot c$;
+\item $a \divsby b$, значит, существует целое число $m$ такое, что $a = m\cdot b$;
+\item тогда $a = m\cdot(n\cdot c) = (m\cdot n)\cdot c$;
 \item но $l = m\cdot n$ --- целое число;
 \item тогда $a = l\cdot c$, то есть $a \divsby c$. Победа.
 \end{itemize}
@@ -129,8 +131,8 @@ $= \che+\che+\ldots+\che+\nech = \nech$.
 \newslide{Доказательство}\vspace{-7mm}
 
 \begin{itemize}\itemsep=0mm
-\item  $a \divsby b$, значит, существует целое число $n$ такое, что $a = n\cdot b$;
-\item  $c \divsby b$, значит, существует целое число $m$ такое, что $c = m\cdot b$;
+\item $a \divsby b$, значит, существует целое число $n$ такое, что $a = n\cdot b$;
+\item $c \divsby b$, значит, существует целое число $m$ такое, что $c = m\cdot b$;
 \item тогда $a+с = n\cdot b + a = m\cdot b = (n+m)\cdot b$;
 \item но $l =n+m$ --- целое число;
 \item тогда $a+c = l\cdot b$, то есть $(a+c) \divsby b$. Победа.
@@ -171,7 +173,7 @@ $= \che+\che+\ldots+\che+\nech = \nech$.
 \item Первое слагаемое точно делится на $2^n$. Если второе делится, то и $N$ должно. И наоборот.
 \end{itemize}
 
-\newslide{Признаки делимости 3 и 9}
+\newslide{Признаки делимости на 3 и 9}
 
 \begin{itemize}
 \item Число делится на $3$ тогда и только тогда, когда сумма его цифр делится на $3$.
@@ -186,17 +188,89 @@ $= \che+\che+\ldots+\che+\nech = \nech$.
 \item Разность числа и его суммы цифр точно делится на $9$. Значит, если число $\overline{abc}$ делилось на $9$, то и его сумма цифр должна делиться. И наоборот.
 \end{itemize}
 
-\newslide{Признаки делимости 11 и 7}
+\newslide{Признак делимости на 11}
 
 \begin{itemize}
-\item Число делится на $11$ тогда и только тогда, когда сумма его цифр делится на $3$.
+\item Число делится на $11$, если знакочередующаяся сумма его цифр делится на $11$.
+
+Например, $66 \to 6-6=0 \divsby 11$, $121 \to 1-2+1=0 \divsby 11$ \lb или $881\cdot11=9691\to 9-6+9-1=11\divsby11$.
 \item Число делится на $7$ тогда и только тогда, когда сумма его цифр делится на $9$.
 \end{itemize}
 
-\newslide{}
+\newslide{Признаки делимости. Задача 5}
+
+Докажите, что число вида $\overline{a_1a_2\ldots a_na_n\ldots a_2a_1}$ (одни и те же цифры написаны в прямом порядке, а потом -- в обратном) не бывает простым.
+
+\newslide{Решение}\vspace{-10mm}
+
+\begin{itemize}\itemsep=-1mm
+\item На самом деле, бывает. Но только в случае, когда\lb $n=1$ и $a_1=1$. Тогда данное число --- это $11$, и оно простое.
+\item Но это единственный случай. 
+\end{itemize}
+
+\newslide{Решение (полное)}\vspace{-12mm}
+
+\begin{itemize}\itemsep=-3mm
+\item Заметим, что любая цифра встречается в этом числе на чётной и на нечётной позициях одинаковое число раз: $\overline{a_1a_2\ldots a_na_n\ldots a_2a_1}$.
+\item Значит, в знакочередующуюся сумму любая цифра войдёт как с плюсом, так и с минусом. Причём одинаковое количество раз.
+\item Тогда знакочередующаяся сумма будет равна нулю.
+\item Значит, любое число такого вида делится на 11. 
+\item То есть такое число будет простым только в единственном случае, описанном в начале.
+\end{itemize}
+
+\newslide{Признаки делимости на 7}
 
 \begin{itemize}
-\item .
+\item Число делится на $7$, если разница между этим числом без последней цифры и удвоенной последней цифрой делится на $7$.
+
+Например, $42 \to 4-2\cdot2=0 \divsby 7$, $23\cdot7=161 \to 16-1\cdot2=14 \divsby 7$ или $1533 \to 153-3\cdot2 = 147 \to 14 - 7\cdot2 = 0 \divsby 7$.
+\end{itemize}
+
+\newslide{Признаки делимости на 7}
+
+\begin{itemize}
+\item \textit{Трёхзначные грани числа} --- это числа, которые получены разбиением исходного числа на трёхзначные числа.
+\item Число делится на 7, если знакочередующаяся сумма его трёхзначных граней делится на 7.
+
+Например, $637616 \to 637-616=21 \divsby 7$. И действительно, $637616 = 91088\cdot7$.
+\end{itemize}
+
+\newslide{Признаки делимости. Задача 6}
+
+На что, согласно признакам, делится число 
+\begin{itemize}
+\item 1848;
+\item 352;
+\item 6160;
+\item 2013?
+\end{itemize}
+
+\newslide{Математические бои}
+
+\begin{itemize}
+	\item нестандартные задачи;
+	\item около 10 задач на разные разделы математики.
+	\item на решение даётся по 1,5--2 месяца;
+	\item прекрасная возможность проверить свои силы и поработать с серьёзными математическими задачами.
+\end{itemize}
+
+\newslide{Математическая регата}
+
+\begin{itemize}
+	\item нестандартные задачи;
+	\item готовят к формату Турнира;
+	\item 3 серии по 3--4 задачи;
+	\item на решение даётся по 1,5--2 дня;
+	\item решения проверяют авторы задач.
+\end{itemize}
+
+\newslide{Контакты}
+
+\begin{itemize}
+	\item сайт: \url{https://spbtym.ru/}
+	\item система регистрации: \url{https://rs.spbtym.ru/} 
+	\item почта Турнира: \href{mailto: mail@spbtym.ru}{mail@spbtym.ru}
+	\item задать вопрос автору: \href{mailto: todzhe@mail.ru}{todzhe@mail.ru}
 \end{itemize}
 
 \end{document}
