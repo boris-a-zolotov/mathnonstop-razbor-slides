@@ -1,0 +1,20 @@
+\def\hAt{-2}
+
+\definecolor{cm}{RGB}{190,0,170}
+\definecolor{half}{RGB}{45,190,80}
+\definecolor{each}{RGB}{215,215,215}
+
+\def\vertgrid{
+	\foreach \y in {-6,...,4} {
+		\draw[color=cm,very thick] (\hAt cm - 0.8 cm,\y cm)
+			node[left]{\y}
+			-- (\hAt cm - 0.4 cm,\y cm);
+		\foreach \t in {1,...,9} {
+			\draw[color=each,thick] (\hAt cm - 0.68 cm, \y cm + 0.1*\t cm)
+				-- (\hAt cm - 0.52 cm, \y cm + 0.1*\t cm);
+		};
+		\draw[color=half,very thick]
+			(\hAt cm - 0.71 cm, \y cm + 0.5 cm)
+			-- (\hAt cm - 0.49 cm, \y cm + 0.5 cm);
+	};
+}

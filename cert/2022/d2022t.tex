@@ -1,0 +1,24 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage{tikz,amsmath,graphicx,xcolor}
+\usepackage[a4paper,landscape,margin=-2mm]{geometry}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+\begin{document}
+\pagestyle{empty}
+
+\input{vertgrid}
+
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=29cm]{2022t}};
+	\draw (0,1.5) node{\LARGE\bfseries второй степени};
+	\draw (0,-0.2) node{\huge\bfseries Пахолкова Алиса Александровна};
+	\draw (0,-1.6) node{\Large\itshape ГБОУ СОШ №630 Приморского района};
+	\draw (0,-2.75) node{\Large\itshape 4 класс, вариант 4-базовый};
+%	\vertgrid;
+} \end{center}
+
+\end{document}
