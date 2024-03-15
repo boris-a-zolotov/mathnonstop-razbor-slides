@@ -1,4 +1,4 @@
-\documentclass[aspectratio=1610,12pt,notheorems]{beamer}
+\documentclass[aspectratio=1610,12pt]{beamer}
 
 \input{0presdefs}
 
@@ -6,12 +6,12 @@
     {\bfseries Решения избранных задач}
 
 \author[\ ]
-	{Б. А. Золотов,\quad «Математика НОН-СТОП»\\ \vspace{0.3cm}
-		{\small Фонд «Время Науки»}}
+	{Б. А. Золотов,\quad ``Математика НОН-СТОП''\\ \vspace{0.3cm}
+		{\small ``Фонд Время Науки''}}
 
 \institute[\ ]{\ }
 
-\date{4 декабря 2020}
+\date{\today}
 
 %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%
@@ -138,7 +138,7 @@
 \begin{frame} \frametitle{Пульт от кондиционера}
 \begin{center} \includegraphics[width=6.8cm]{img/Digiface} \end{center}
 
-	\usl{2020-6-5A}{На пульте есть две кнопки: «предыдущий режим» и «следующий режим». Работают только сегменты, образующие цифру 7. Сколько переключений тогда нужно, чтобы гарантированно определить режим, в котором находится пульт?}
+	\usl{2020-6-5A}{На пульте есть две кнопки: ``предыдущий режим'' и ``следующий режим''. Работают только сегменты, образующие цифру 7. Сколько переключений тогда нужно, чтобы гарантированно определить режим, в котором находится пульт?}
 
 \begin{center} \includegraphics[width=6.3cm]{img/Digiface-A} \end{center}
 \end{frame}
@@ -171,6 +171,87 @@
 $t_1$ — наибольшее, $t_1! = 2^a \cdot r$.
 
 $t_2$ — наименьшее, $t_2! = 2^{a+1} \cdot r$. Тогда $t_2$ не делится на 4, а следующее чётное число делится на 4.
+
+\end{frame}
+
+
+%%%%%%  2024
+
+
+\begin{frame} \frametitle{Пропорция с хвостом}
+
+\usl{2021-4-4B}{Если корабль длиной 250 м идёт на полной скорости,\\ то нужно целиться на 250 м перед носом корабля.\\ Корабль идёт с $\frac{1}{3}$ максимальной скорости.\\ В какую точку нужно целиться?}
+
+	\[ \lr*{\lr*{250 + 125} / 3} - 125 = 0. \]
+
+\end{frame}
+
+
+\begin{frame}{Цистерцианская запись}
+
+\usl{2021-5-6}{Докажите, что любое число от 1 до 9999 можно однозначно\\
+восстановить по его цистерцианской записи.}
+
+\begin{center}
+\tikz[scale=0.6]{
+	\draw[very thick] (0,0) -- (0,3) -- (1,3); \draw (0.5,-0.7) node {\large $1$};
+	\draw[very thick] (2,0) -- (2,3); \draw[very thick] (2,2) -- (3,2); \draw (2.5,-0.7) node {\large $2$};
+	\draw[very thick] (4,0) -- (4,3) -- (5,2); \draw (4.5,-0.7) node {\large $3$};
+	\draw[very thick] (6,0) -- (6,3); \draw[very thick] (6,2) -- (7,3); \draw (6.5,-0.7) node {\large $4$};
+	\draw[very thick] (8,0) -- (8,3) -- (9,3) -- (8,2); \draw (8.5,-0.7) node {\large $5$};
+	\draw[very thick] (10,0) -- (10,3);\draw[very thick] (11,2) -- (11,3); \draw (10.5,-0.7) node {\large $6$};
+	\draw[very thick] (12,0) -- (12,3) -- (13,3) -- (13,2); \draw (12.5,-0.7) node {\large $7$};
+	\draw[very thick] (14,0) -- (14,3); \draw[very thick] (14,2) -- (15,2) -- (15,3); \draw (14.5,-0.7) node {\large $8$};
+	\draw[very thick] (16,0) -- (16,3) -- (17,3) -- (17,2) -- (16,2); \draw (16.5,-0.7) node {\large $9$};
+} 
+\end{center}
+
+\end{frame}
+
+
+\begin{frame} \frametitle{Перемешивание карт}
+
+\begin{center} \includegraphics[width=0.55\paperwidth]{img/cards} \end{center} \vspace{-0.4cm}
+
+\usl{2021-6-1A}{Окажутся ли две карты, изначально бывшие рядом,\\
+снова рядом после двух таких перемешиваний?}
+
+\end{frame}
+
+
+\begin{frame} \frametitle{Задача, которую никто не решит}
+
+\usl{7 класс, 3C}{
+Придумать число, цифры которого при умножении\\
+на \( 1\ldots 6 \) остаются теми же,\\
+меняется лишь порядок.}
+
+{\small
+\begin{center}\begin{tabular}{llll}
+   $142857 \cdot 1 = 142857$ & $10^0 \equiv 1$ & $142857 \cdot 4 = 571428$ & $10^4 \equiv 4$ \\
+   $142857 \cdot 2 = 285714$ & $10^2 \equiv 2$ & $142857 \cdot 4 = 714285$ & $10^5 \equiv 5$ \\
+   $142857 \cdot 3 = 428571$ & $10^1 \equiv 3$ & $142857 \cdot 4 = 857142$ & $10^3 \equiv 6$ \\
+\end{tabular}\end{center}}
+
+\end{frame}
+
+\begin{frame} \frametitle{Аккуратный подсчёт}
+
+\usl{2021-8-2A}{Посчитайте всевозможные различные простые пути
+	в графе на рисунке ниже}
+
+\newcommand{\vnode}{node[circle,fill=black,fill opacity=1,inner sep=0pt,minimum size=1.7mm]{}}
+
+\begin{center} \tikz[scale=0.9]{
+	     \draw[thick] (-2,0) \vnode -- (-1,0) \vnode -- (0,0) \vnode --
+	          (0,1) \vnode -- (-1,1) \vnode -- (-2,1) \vnode;
+	     \draw[thick] (0,1) -- (1,1) \vnode -- (2,1) \vnode --
+	          (3,1) \vnode -- (4,1) \vnode;
+	     \draw[thick] (0,0) -- (1,1);
+	} \end{center} \vspace{-8mm} \pause
+
+\[C_3^2 + C_3^2 + C_4^2 +
+	2 \cdot 3 \cdot 3 + 2 \cdot 3 \cdot 4 + 2 \cdot 3 \cdot 4.\] \vspace{-8mm}
 
 \end{frame}
 
